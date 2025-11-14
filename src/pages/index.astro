@@ -4,17 +4,17 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="The Code Sorcerer - Software Agency">
   <main>
     <section id="hero" class="bg-background-light dark:bg-background-dark py-24 md:py-32">
-      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-6 md:gap-8 items-center max-w-6xl">
         <div class="text-center md:text-left">
-          <h1 class="font-display text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">We Don't Code. We Cast Spells.</h1>
+          <h1 class="font-display text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">We Don't Code. <span class="gradient-text">We Cast Spells.</span></h1>
           <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto md:mx-0">A high-taste software agency crafting world-class apps, AI systems, and digital products with precision — like sorcery.</p>
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a class="bg-primary text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-primary-light transition-colors" href="#">Book a Call</a>
-            <a class="bg-gray-900 dark:bg-gray-800 text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors" href="#">View Our Work</a>
+            <a class="bg-primary text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-primary-light transition-all hover:shadow-xl hover:scale-105" href="/contact">Book a Call</a>
+            <a class="bg-gray-900 dark:bg-gray-800 text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-gray-800 dark:hover:bg-gray-700 transition-all hover:shadow-xl hover:scale-105" href="/work">View Our Work</a>
           </div>
         </div>
         <div class="relative flex justify-center">
-          <img alt="Abstract tech shapes illustration with pixel sparks" class="max-w-md w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTtRljq91k06bCvWF3LfKlR9H2kzUDW72QCQPiEFIQu6tOZF9gEl1IDLB4m3cOKkOhnwknr_gGfps_1cgcDktkTlvGYztlbMDJfixdOkfoE9ntjj_MOmZZibzYv6s6pb7hQ_5TrUCRtuA9fCPQlh1TW3bWf2eGRolwfi-UAr2pia9WCU1_zlBdt1n8onsqE_k8B2mz0w7hbJjRkYQeC7joOdKLYhyM0MrOkuDV2zQkW3dDxqwE84nBYz_RQD_tajnlOfw-UdZ_gwQ"/>
+          <img alt="The Code Sorcerer Logo" class="max-w-md w-full drop-shadow-2xl animate-float" src="/tcs.svg"/>
           <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full -z-10"></div>
         </div>
       </div>
@@ -86,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
             <div class="relative">
               <span class="material-symbols-outlined text-primary text-4xl">security</span>
-              <h3 class="font-display text-xl font-semibold mt-gray-900 dark:text-white">CharmGuard Security</h3>
+              <h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">CharmGuard Security</h3>
               <p class="mt-2 text-gray-600 dark:text-gray-400">Automating deployment and scaling your infrastructure magically.</p>
             </div>
           </div>
@@ -139,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
           </ul>
         </div>
         <div class="relative flex justify-center items-center">
-          <img alt="Glowing blueprint tech illustration" class="max-w-md w-full opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-gXjy0nXJMwze73b8h_GNVweRRxr7EVZeA1Fcolle1bQsztqTeyO7QHQyUI5UudURANW-ehZaQ1k-bX3-DNAG5yY8Pl2UM2BL6XXiK3kqrhwsinbKHSSLiOyqTbkWUl22vxaCHYKCaPdry-ErvA7TvROYiqVfveryVngERI8YYjnem2lPJ_LziK5DYCTnNls2-TaDa2uzuatrdlxSwiBM6-qSZDtIZtuUXuaHdQAY9OpHhkVaiZosveaZdg1QZzokm6nAJNBk_qI"/>
+          <img alt="Technical architecture blueprint with code sorcery" class="max-w-md w-full opacity-90 drop-shadow-xl" src="/sorcerer-blueprint.svg"/>
           <div class="absolute inset-0 bg-accent/20 blur-3xl rounded-full"></div>
         </div>
       </div>
@@ -152,26 +152,26 @@ import Layout from '../layouts/Layout.astro';
           <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">See how our code magic has transformed businesses.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="group relative rounded-lg overflow-hidden shadow-lg">
-            <img alt="Case study preview for Project Alchemy" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP0hLp7fYtepmFv9RUNx3HYFE9-CW9l-RhTVWI6QjLi36owBdAaONndZR_N8LuxjM3kYtjbm7Jbboh7pmy-JI4HY_jEfsrd6Ydv15lAX055anOntXUltDdU98pyMHVGlbAaV4B-ry8f0UMsJo_Z6da5N21MHTptVJ7JADo_Rk11k4CrqQx1-lawuTSE1ODUNahkEvRNI2bLfFDoiEmhI-6aVJaxHJHyE0k_pKqhhmds9Zz7Q_acpNFGSU5Q7xB5VqKJabELrgjYT8"/>
-            <div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="material-symbols-outlined text-4xl mb-2">spark</span>
+          <div class="group relative rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-900">
+            <img alt="Case study preview for Project Alchemy" class="w-full h-80 object-cover" src="/project-alchemy.svg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/95 to-primary/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-5xl mb-3">auto_awesome</span>
               <h3 class="font-display text-2xl font-bold">Project Alchemy</h3>
               <p class="mt-2">Transformed a legacy system into a modern, scalable platform.</p>
             </div>
           </div>
-          <div class="group relative rounded-lg overflow-hidden shadow-lg">
-            <img alt="Case study preview for Nova Portal" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCThmD1Cf0JlGVCZ4CseMju2sBYbDimi4ZkYrd2o_gJ0p13pZAkxGqd-Vyz5dPZKcK2-7ZRnlx0UrnZKybTB47X8Vui_5Z-mtc0dY7dpssEidunN-YmiypsJjCAAcq-5il9ec16L6IkTGnwTbju0SyOMhuOcyR0zsN-jgHZCQYlf3nNBxCwmp0ISkUu6daBl8pUpsPHf7Vwa030LkBb6kCNo6-AArq_gY2-Bd3b073i4UWfLBEn7PjKB4kgvyqMkrn3oDPbaGg1kD4"/>
-            <div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="material-symbols-outlined text-4xl mb-2">spark</span>
+          <div class="group relative rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-900">
+            <img alt="Case study preview for Nova Portal" class="w-full h-80 object-cover" src="/project-nova.svg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-accent/95 to-accent/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-5xl mb-3">psychology</span>
               <h3 class="font-display text-2xl font-bold">Nova Portal</h3>
-              <p class="mt-2">Built a customer portal that reduced support tickets by 60%.</p>
+              <p class="mt-2">Built an AI-powered customer portal that reduced support tickets by 60%.</p>
             </div>
           </div>
-          <div class="group relative rounded-lg overflow-hidden shadow-lg">
-            <img alt="Case study preview for Quantum Leap" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-Dt-pmOm0XLO_qgVZJyTCgEsdqiXvEeo14FHqWj5yMMKARxcuJmKI6NnGX9UU_uVkiVTrcFDEmzGASsb-3kCd19hLpyHy9stt_Z-cSQ-8u-paqdNeI1W0prGzPWo6tM3zGmGGqr9HcnPUz31A1fupotGAcdJwWgzbZTr1L-rlhfdX-BlMjG0m7RMZDEXHbhXs5JeumLPnPYlIkViUbSb1P-Mw8-wN9u4xdx4yfdToGlLhb8a_svryc_a7Mbs3YN4F9cZTNTAWgc"/>
-            <div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="material-symbols-outlined text-4xl mb-2">spark</span>
+          <div class="group relative rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-900">
+            <img alt="Case study preview for Quantum Leap" class="w-full h-80 object-cover" src="/project-quantum.svg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/95 to-accent/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="material-symbols-outlined text-5xl mb-3">trending_up</span>
               <h3 class="font-display text-2xl font-bold">Quantum Leap</h3>
               <p class="mt-2">Developed an AI model that increased user engagement by 200%.</p>
             </div>
@@ -236,7 +236,7 @@ import Layout from '../layouts/Layout.astro';
           <p class="font-display text-2xl md:text-3xl font-medium text-gray-900 dark:text-white">"Working with The Code Sorcerer felt like magic. They delivered our complex platform ahead of schedule and the quality was beyond our wildest dreams."</p>
         </blockquote>
         <div class="mt-8 flex items-center justify-center gap-4">
-          <img alt="Avatar of Jane Doe" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrTXJQKuleG-1b7usS-oZoE_ROjdCfdhBN5rj1xHocr5iTv46_ob6h2Tuzfai9EomO3vUbdFMEoWaDq030aJkm1QjiZrjtVlr9JSCLEbtf_xJIV23NveuZf4avEny37GOyupduxLsZXHJ4RjWIIi1atCOHJgD58kY8izaOZtT9qKkwWzxsTy-omLYfKia9cbIGbuC1mKuFlEnGbIQqZ8s3DQJUXCZnMHUvaxvT_PMHhQfK5gmF94xrqOuqpk-S3ImT4694sr5iao"/>
+          <img alt="Avatar of Jane Doe" class="h-14 w-14 rounded-full object-cover" src="/avatar-placeholder.svg"/>
           <div>
             <p class="font-semibold text-gray-900 dark:text-white">Jane Doe</p>
             <p class="text-gray-600 dark:text-gray-400">CEO, Tech Innovators Inc.</p>
@@ -268,6 +268,32 @@ import Layout from '../layouts/Layout.astro';
               <li class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-green-500 text-lg">check</span>
                 Basic Support
+              </li>
+            </ul>
+            <a class="mt-8 block w-full text-center bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" href="#">Choose Plan</a>
+          </div>
+
+          <div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-2xl border-2 border-primary relative">
+            <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+            <h3 class="font-display text-xl font-semibold text-primary">Growth Ritual</h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">For growing products &amp; teams.</p>
+            <p class="mt-6 font-display text-4xl font-bold text-gray-900 dark:text-white">$15k<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/mo</span></p>
+            <ul class="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-500 text-lg">check</span>
+                Dedicated Team (2-3)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-500 text-lg">check</span>
+                Agile Development
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-500 text-lg">check</span>
+                Priority Support
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-green-500 text-lg">check</span>
+                UI/UX Design
               </li>
             </ul>
             <a class="mt-8 block w-full text-center bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="#">Choose Plan</a>
@@ -314,7 +340,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container mx-auto px-6 py-16">
       <div class="grid md:grid-cols-4 gap-8">
         <div class="md:col-span-1">
-          <img alt="The Code Sorcerer Logo" class="h-12 md:h-14 w-auto filter invert brightness-0" src="/tcs.svg"/>
+          <img alt="The Code Sorcerer Logo" class="h-20 md:h-24 w-auto filter invert brightness-0" src="/tcs.svg"/>
           <p class="mt-4 text-gray-400">Engineering Meets Sorcery.</p>
         </div>
         <div>
