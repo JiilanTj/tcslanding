@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#7A5FFF"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer glow -->
+  <circle cx="60" cy="60" r="50" fill="url(#sparkGrad)" opacity="0.1"/>
+  
+  <!-- Main sparkle -->
+  <path d="M 60 20 L 65 55 L 100 60 L 65 65 L 60 100 L 55 65 L 20 60 L 55 55 Z" fill="url(#sparkGrad)">
+    <animateTransform attributeName="transform" type="rotate" from="0 60 60" to="360 60 60" dur="20s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Inner sparkle -->
+  <path d="M 60 40 L 62 58 L 80 60 L 62 62 L 60 80 L 58 62 L 40 60 L 58 58 Z" fill="url(#sparkGrad)" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="360 60 60" to="0 60 60" dur="15s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Center dot -->
+  <circle cx="60" cy="60" r="8" fill="white">
+    <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="60" cy="60" r="4" fill="url(#sparkGrad)"/>
+</svg>

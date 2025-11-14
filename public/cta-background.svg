@@ -1,0 +1,58 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#7A5FFF"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#ctaGrad)" opacity="0.05"/>
+  
+  <!-- Magical circles and patterns -->
+  <g opacity="0.15">
+    <circle cx="100" cy="200" r="150" stroke="#0066FF" stroke-width="2" fill="none"/>
+    <circle cx="100" cy="200" r="120" stroke="#7A5FFF" stroke-width="1.5" fill="none"/>
+    <circle cx="100" cy="200" r="90" stroke="#0066FF" stroke-width="1" fill="none"/>
+    
+    <circle cx="700" cy="200" r="130" stroke="#7A5FFF" stroke-width="2" fill="none"/>
+    <circle cx="700" cy="200" r="100" stroke="#0066FF" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Floating code symbols -->
+  <g font-family="monospace" font-size="24" fill="url(#ctaGrad)" opacity="0.3" filter="url(#glow)">
+    <text x="150" y="80">&lt;/&gt;</text>
+    <text x="650" y="350">{}</text>
+    <text x="50" y="320">[]</text>
+    <text x="720" y="80">()</text>
+  </g>
+  
+  <!-- Sparkles -->
+  <g fill="#0066FF" opacity="0.4">
+    <circle cx="200" cy="100" r="3">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="300" r="4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="50" r="2">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Magic wand -->
+  <g transform="translate(400, 200)" opacity="0.2">
+    <rect x="-3" y="-60" width="6" height="120" fill="url(#ctaGrad)" rx="3">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+    </rect>
+    <polygon points="0,-70 10,-80 0,-90" fill="#7A5FFF"/>
+    <circle cx="0" cy="-80" r="8" fill="#0066FF" opacity="0.5"/>
+  </g>
+</svg>

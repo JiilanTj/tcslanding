@@ -1,0 +1,81 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background glow -->
+  <circle cx="300" cy="300" r="250" fill="url(#glow)" opacity="0.3"/>
+  
+  <!-- Magic circle base -->
+  <circle cx="300" cy="300" r="220" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.6"/>
+  <circle cx="300" cy="300" r="200" stroke="url(#gradient1)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <circle cx="300" cy="300" r="180" stroke="url(#gradient1)" stroke-width="1" fill="none" opacity="0.3"/>
+  
+  <!-- Central code symbols -->
+  <g transform="translate(300, 300)">
+    <!-- Brackets -->
+    <path d="M -60 -80 L -80 -80 L -80 80 L -60 80" stroke="#0066FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 60 -80 L 80 -80 L 80 80 L 60 80" stroke="#0066FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- Code lines with sparkles -->
+    <line x1="-50" y1="-40" x2="10" y2="-40" stroke="#7A5FFF" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="15" cy="-40" r="3" fill="#7A5FFF"/>
+    
+    <line x1="-50" y1="0" x2="30" y2="0" stroke="#0066FF" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="35" cy="0" r="3" fill="#0066FF"/>
+    
+    <line x1="-50" y1="40" x2="0" y2="40" stroke="#7A5FFF" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="5" cy="40" r="3" fill="#7A5FFF"/>
+  </g>
+  
+  <!-- Floating magic particles -->
+  <g opacity="0.8">
+    <circle cx="150" cy="150" r="4" fill="#0066FF">
+      <animate attributeName="cy" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="180" r="3" fill="#7A5FFF">
+      <animate attributeName="cy" values="180;170;180" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="420" r="5" fill="#0066FF">
+      <animate attributeName="cy" values="420;410;420" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="450" r="3" fill="#7A5FFF">
+      <animate attributeName="cy" values="450;440;450" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Hexagonal grid pattern -->
+  <g opacity="0.2" stroke="#0066FF" stroke-width="1" fill="none">
+    <path d="M 250 100 L 280 85 L 310 100 L 310 130 L 280 145 L 250 130 Z"/>
+    <path d="M 340 160 L 370 145 L 400 160 L 400 190 L 370 205 L 340 190 Z"/>
+    <path d="M 200 240 L 230 225 L 260 240 L 260 270 L 230 285 L 200 270 Z"/>
+    <path d="M 340 320 L 370 305 L 400 320 L 400 350 L 370 365 L 340 350 Z"/>
+  </g>
+  
+  <!-- Sparkle stars -->
+  <g fill="#7A5FFF">
+    <path d="M 100 250 L 104 254 L 100 258 L 96 254 Z" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 100 250" to="360 100 250" dur="20s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 500 320 L 504 324 L 500 328 L 496 324 Z" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 500 320" to="360 500 320" dur="15s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 480 150 L 484 154 L 480 158 L 476 154 Z" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 480 150" to="360 480 150" dur="18s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Gradients and effects -->
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#0066FF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#7A5FFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7A5FFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="50%" stop-color="#7A5FFF"/>
+      <stop offset="100%" stop-color="#0066FF"/>
+    </linearGradient>
+  </defs>
+</svg>

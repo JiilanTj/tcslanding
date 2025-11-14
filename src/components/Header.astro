@@ -24,16 +24,16 @@ const isActive = (href: string): boolean => {
 ---
 
 <header class="relative z-50">
-  <nav class="fixed top-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur supports-[backdrop-filter]:bg-background-light/80 supports-[backdrop-filter]:dark:bg-background-dark/80 shadow-sm dark:shadow-md dark:shadow-gray-900">
+  <nav class="fixed top-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur supports-[backdrop-filter]:bg-background-light/80 supports-[backdrop-filter]:dark:bg-background-dark/80 shadow-sm dark:shadow-md dark:shadow-gray-900 border-b border-gray-100 dark:border-gray-800">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-3">
-        <img alt="The Code Sorcerer Logo" class="h-12 md:h-14 w-auto" src="/tcs.svg"/>
-      </div>
+      <a href="/" class="flex items-center space-x-3 group">
+        <img alt="The Code Sorcerer Logo" class="h-12 md:h-14 w-auto transition-transform group-hover:scale-105" src="/tcs.svg"/>
+      </a>
       
       <div class="hidden lg:flex items-center space-x-8">
         {navLinks.map((link) => (
           <a
-            class={`font-medium transition-colors ${isActive(link.href) ? 'text-primary dark:text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary'}`}
+            class={`font-medium transition-all hover:scale-105 ${isActive(link.href) ? 'text-primary dark:text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary'}`}
             href={link.href}
             aria-current={isActive(link.href) ? 'page' : undefined}
           >
@@ -44,16 +44,48 @@ const isActive = (href: string): boolean => {
       
       <div class="hidden lg:flex items-center space-x-4">
         <ThemeSwitcher />
-        <a class="bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="/#cta">Book a Call</a>
+        <a class="bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-all hover:shadow-lg hover:scale-105" href="/contact">Book a Call</a>
       </div>
       
       <div class="lg:hidden flex items-center space-x-4">
         <ThemeSwitcher />
-        <button class="text-gray-900 dark:text-white" id="mobile-menu-button" aria-label="Open menu">
+        <button class="text-gray-900 dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors" id="mobile-menu-button" aria-label="Open menu">
           <span class="material-symbols-outlined">menu</span>
         </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 dark:border-gray-800 bg-background-light dark:bg-background-dark">
+      <div class="container mx-auto px-6 py-4 space-y-3">
+        {navLinks.map((link) => (
+          <a
+            class={`block py-2 px-4 rounded-lg font-medium transition-colors ${isActive(link.href) ? 'bg-primary/10 text-primary' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a class="block w-full text-center bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors mt-4" href="/contact">Book a Call</a>
       </div>
     </div>
   </nav>
   <div class="h-[88px] md:h-[96px]"></div>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mobileMenuButton?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+</script>

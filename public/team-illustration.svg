@@ -1,0 +1,92 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="50%" stop-color="#7A5FFF"/>
+      <stop offset="100%" stop-color="#0066FF"/>
+    </linearGradient>
+    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#0066FF" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="#f8fafc"/>
+  <rect width="600" height="600" fill="url(#dotPattern)"/>
+  
+  <!-- Team collaboration concept -->
+  <g transform="translate(300, 300)">
+    <!-- Central hub -->
+    <circle cx="0" cy="0" r="60" fill="url(#teamGrad)" opacity="0.2"/>
+    <circle cx="0" cy="0" r="40" stroke="url(#teamGrad)" stroke-width="3" fill="white"/>
+    
+    <!-- Code symbols in center -->
+    <text x="0" y="10" font-family="monospace" font-size="32" font-weight="bold" fill="#0066FF" text-anchor="middle">&lt;/&gt;</text>
+    
+    <!-- Team members (circles around) -->
+    <g transform="translate(0, -140)">
+      <circle cx="0" cy="0" r="50" fill="#0066FF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+      <text x="0" y="55" font-family="sans-serif" font-size="12" fill="#0066FF" text-anchor="middle" font-weight="600"></text>
+    </g>
+    
+    <g transform="translate(120, -70) rotate(60)">
+      <circle cx="0" cy="0" r="50" fill="#7A5FFF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+    </g>
+    
+    <g transform="translate(120, 70) rotate(120)">
+      <circle cx="0" cy="0" r="50" fill="#0066FF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+    </g>
+    
+    <g transform="translate(0, 140) rotate(180)">
+      <circle cx="0" cy="0" r="50" fill="#7A5FFF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+    </g>
+    
+    <g transform="translate(-120, 70) rotate(240)">
+      <circle cx="0" cy="0" r="50" fill="#0066FF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+    </g>
+    
+    <g transform="translate(-120, -70) rotate(300)">
+      <circle cx="0" cy="0" r="50" fill="#7A5FFF" opacity="0.9"/>
+      <circle cx="0" cy="-10" r="18" fill="white" opacity="0.95"/>
+      <path d="M -25 25 Q -25 10 0 10 Q 25 10 25 25 L 25 30 L -25 30 Z" fill="white" opacity="0.95"/>
+    </g>
+    
+    <!-- Connection lines -->
+    <g opacity="0.3" stroke="url(#teamGrad)" stroke-width="2" stroke-dasharray="5,5">
+      <line x1="0" y1="-90" x2="0" y2="-40"/>
+      <line x1="78" y1="-45" x2="28" y2="-28"/>
+      <line x1="78" y1="45" x2="28" y2="28"/>
+      <line x1="0" y1="90" x2="0" y2="40"/>
+      <line x1="-78" y1="45" x2="-28" y2="28"/>
+      <line x1="-78" y1="-45" x2="-28" y2="-28"/>
+    </g>
+  </g>
+  
+  <!-- Floating icons -->
+  <g opacity="0.6">
+    <circle cx="80" cy="120" r="4" fill="#0066FF">
+      <animate attributeName="cy" values="120;110;120" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="480" r="4" fill="#7A5FFF">
+      <animate attributeName="cy" values="480;470;480" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Corner decorations -->
+  <g stroke="#0066FF" stroke-width="2" fill="none" opacity="0.2">
+    <path d="M 30 30 L 30 60 M 30 30 L 60 30"/>
+    <path d="M 570 30 L 540 30 M 570 30 L 570 60"/>
+    <path d="M 30 570 L 30 540 M 30 570 L 60 570"/>
+    <path d="M 570 570 L 540 570 M 570 570 L 570 540"/>
+  </g>
+</svg>
