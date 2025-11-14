@@ -170,7 +170,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
           </ul>
         </div>
         <div class="relative flex justify-center items-center scroll-reveal-right">
-          <img alt="Technical architecture blueprint with code sorcery" class="max-w-md w-full opacity-90 drop-shadow-2xl" src="/sorcerer-blueprint.svg"/>
+          <img alt="Technical architecture blueprint with code sorcery" class="max-w-md w-full opacity-90 drop-shadow-2xl" src="/sorcerer-blueprint.svg" loading="lazy"/>
           <div class="absolute inset-0 bg-accent/20 blur-3xl rounded-full"></div>
         </div>
       </div>
@@ -184,7 +184,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal-stagger">
           <div class="scroll-reveal group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white dark:bg-surface-darker border border-gray-200 dark:border-border-dark">
-            <img alt="Case study preview for Project Alchemy" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-alchemy.svg"/>
+            <img alt="Case study preview for Project Alchemy" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-alchemy.svg" loading="lazy"/>
             <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/80 to-primary/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
               <span class="material-symbols-outlined text-6xl mb-4 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">auto_awesome</span>
               <h3 class="font-display text-2xl font-bold">Project Alchemy</h3>
@@ -195,7 +195,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
             </div>
           </div>
           <div class="scroll-reveal group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white dark:bg-surface-darker border border-gray-200 dark:border-border-dark">
-            <img alt="Case study preview for Nova Portal" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-nova.svg"/>
+            <img alt="Case study preview for Nova Portal" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-nova.svg" loading="lazy"/>
             <div class="absolute inset-0 bg-gradient-to-t from-accent/95 via-accent/80 to-accent/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
               <span class="material-symbols-outlined text-6xl mb-4 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">psychology</span>
               <h3 class="font-display text-2xl font-bold">Nova Portal</h3>
@@ -206,7 +206,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
             </div>
           </div>
           <div class="scroll-reveal group relative rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-white dark:bg-surface-darker border border-gray-200 dark:border-border-dark">
-            <img alt="Case study preview for Quantum Leap" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-quantum.svg"/>
+            <img alt="Case study preview for Quantum Leap" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105" src="/project-quantum.svg" loading="lazy"/>
             <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-accent/80 to-accent/70 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
               <span class="material-symbols-outlined text-6xl mb-4 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">trending_up</span>
               <h3 class="font-display text-2xl font-bold">Quantum Leap</h3>
@@ -304,7 +304,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
                 Basic Support
               </li>
             </ul>
-            <a class="mt-8 block w-full text-center bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all hover:-translate-y-0.5" href="#">Choose Plan</a>
+            <a class="mt-8 block w-full text-center bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all hover:-translate-y-0.5" href="/pricing">Choose Plan</a>
           </div>
 
           <div class="scroll-reveal bg-background-light dark:bg-surface-darker p-8 rounded-xl shadow-glow border-2 border-primary relative scale-105">
@@ -330,7 +330,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
                 UI/UX Design
               </li>
             </ul>
-            <a class="btn-primary mt-8 block w-full text-center" href="#">Choose Plan</a>
+            <a class="btn-primary mt-8 block w-full text-center" href="/pricing">Choose Plan</a>
           </div>
           
           <div class="scroll-reveal bg-background-light dark:bg-surface-darker p-8 rounded-xl shadow-card border border-gray-200 dark:border-border-dark card-hover">
@@ -351,7 +351,7 @@ import TestimonialCarousel from '../components/TestimonialCarousel.astro';
                 24/7 Support &amp; SLA
               </li>
             </ul>
-            <a class="mt-8 block w-full text-center bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all hover:-translate-y-0.5" href="#">Contact Us</a>
+            <a class="mt-8 block w-full text-center bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-all hover:-translate-y-0.5" href="/contact">Contact Us</a>
           </div>
         </div>
       </div>
