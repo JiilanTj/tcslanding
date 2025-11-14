@@ -4,17 +4,68 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 export interface Props {
-	title: string;
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = 'The Code Sorcerer is a senior-only software agency specializing in production-ready apps, AI systems, and digital platforms. We deliver magical results with expert engineering.', keywords = 'software agency, senior engineers, AI, app development, digital platforms, The Code Sorcerer', canonical } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Structured Data: Organization & WebSite -->
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Code Sorcerer",
+    "url": canonical || 'https://thecodesorcerer.com/',
+    "logo": "https://thecodesorcerer.com/tcslogo.png",
+    "sameAs": [
+      "https://twitter.com/thecodesorcerer",
+      "https://linkedin.com/company/thecodesorcerer",
+      "https://github.com/thecodesorcerer",
+      "https://discord.gg/thecodesorcerer"
+    ],
+    "description": description
+  })}</script>
+  <script type="application/ld+json" is:inline>{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": canonical || 'https://thecodesorcerer.com/',
+    "name": title,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${canonical || 'https://thecodesorcerer.com/'}search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  })}</script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{title}</title>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical || 'https://thecodesorcerer.com/'} />
+  <meta property="og:image" content="https://thecodesorcerer.com/tcslogo.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://thecodesorcerer.com/tcslogo.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script is:inline>{`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  `}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
