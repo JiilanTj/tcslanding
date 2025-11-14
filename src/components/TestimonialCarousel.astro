@@ -1,0 +1,224 @@
+---
+// Testimonial data
+const testimonials = [
+  {
+    quote: "Working with The Code Sorcerer felt like magic. They delivered our complex platform ahead of schedule.",
+    author: "Jane Doe",
+    role: "CEO, Tech Innovators Inc.",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "The best development team we've ever worked with. Their code quality is exceptional.",
+    author: "John Smith",
+    role: "CTO, StartupXYZ",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "They turned our ambitious vision into reality. Absolutely world-class engineering.",
+    author: "Sarah Johnson",
+    role: "Founder, AI Solutions",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "Fast, reliable, and incredibly skilled. Our go-to team for all technical challenges.",
+    author: "Michael Chen",
+    role: "VP Engineering, DataCorp",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "The Code Sorcerer transformed our legacy system into a modern, scalable platform.",
+    author: "Emily Rodriguez",
+    role: "Product Lead, FinTech Pro",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "Exceptional attention to detail and deep technical expertise. Highly recommended!",
+    author: "David Kim",
+    role: "Head of Product, CloudBase",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "They delivered a production-ready AI system that exceeded all our expectations.",
+    author: "Lisa Wang",
+    role: "CEO, ML Innovations",
+    avatar: "/avatar-placeholder.svg"
+  },
+  {
+    quote: "Professional, fast, and always delivers on promises. A true partner in success.",
+    author: "Robert Taylor",
+    role: "Founder, SaaS Ventures",
+    avatar: "/avatar-placeholder.svg"
+  }
+];
+
+// Split testimonials into two rows
+const firstRow = testimonials.slice(0, 4);
+const secondRow = testimonials.slice(4, 8);
+---
+
+<div class="testimonial-carousel-wrapper overflow-hidden relative">
+  <!-- Gradient Fade Overlays -->
+  <div class="fade-left"></div>
+  <div class="fade-right"></div>
+  
+  <!-- First Row - Scroll Left to Right -->
+  <div class="testimonial-track mb-8">
+    <div class="testimonial-row scroll-right">
+      {firstRow.concat(firstRow).map((testimonial) => (
+        <div class="testimonial-card bg-background-light dark:bg-surface-darker p-6 rounded-xl border border-gray-200 dark:border-border-dark shadow-card">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">format_quote</span>
+          <p class="text-sm text-gray-700 dark:text-text-dark-secondary leading-relaxed mb-4">"{testimonial.quote}"</p>
+          <div class="flex items-center gap-3">
+            <img 
+              alt={`Avatar of ${testimonial.author}`} 
+              class="h-10 w-10 rounded-full object-cover ring-2 ring-primary/20" 
+              src={testimonial.avatar}
+            />
+            <div class="text-left">
+              <p class="font-semibold text-sm text-gray-900 dark:text-text-dark-primary">{testimonial.author}</p>
+              <p class="text-xs text-gray-600 dark:text-text-dark-secondary">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Second Row - Scroll Right to Left -->
+  <div class="testimonial-track">
+    <div class="testimonial-row scroll-left">
+      {secondRow.concat(secondRow).map((testimonial) => (
+        <div class="testimonial-card bg-background-light dark:bg-surface-darker p-6 rounded-xl border border-gray-200 dark:border-border-dark shadow-card">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">format_quote</span>
+          <p class="text-sm text-gray-700 dark:text-text-dark-secondary leading-relaxed mb-4">"{testimonial.quote}"</p>
+          <div class="flex items-center gap-3">
+            <img 
+              alt={`Avatar of ${testimonial.author}`} 
+              class="h-10 w-10 rounded-full object-cover ring-2 ring-primary/20" 
+              src={testimonial.avatar}
+            />
+            <div class="text-left">
+              <p class="font-semibold text-sm text-gray-900 dark:text-text-dark-primary">{testimonial.author}</p>
+              <p class="text-xs text-gray-600 dark:text-text-dark-secondary">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .testimonial-carousel-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  /* Gradient Fade Overlays */
+  .fade-left,
+  .fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .fade-left {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgb(var(--bg-color)) 0%,
+      rgba(var(--bg-color), 0.8) 30%,
+      rgba(var(--bg-color), 0) 100%
+    );
+  }
+
+  .fade-right {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgb(var(--bg-color)) 0%,
+      rgba(var(--bg-color), 0.8) 30%,
+      rgba(var(--bg-color), 0) 100%
+    );
+  }
+
+  /* Light mode colors */
+  :root {
+    --bg-color: 255, 255, 255;
+  }
+
+  /* Dark mode colors */
+  :root.dark {
+    --bg-color: 11, 17, 32;
+  }
+
+  .testimonial-track {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .testimonial-row {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+  }
+
+  .testimonial-card {
+    min-width: 350px;
+    max-width: 350px;
+    flex-shrink: 0;
+  }
+
+  /* Scroll Right Animation (Left to Right) */
+  .scroll-right {
+    animation: scrollRight 40s linear infinite;
+  }
+
+  .scroll-right:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Scroll Left Animation (Right to Left) */
+  .scroll-left {
+    animation: scrollLeft 40s linear infinite;
+  }
+
+  .scroll-left:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      min-width: 280px;
+      max-width: 280px;
+    }
+    
+    .fade-left,
+    .fade-right {
+      width: 80px;
+    }
+  }
+</style>

@@ -1,6 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const featuredPost = {
+  title: 'The Art of Code Sorcery: Blending AI, Craft, and Human Intuition',
+  date: 'Nov 10, 2025',
+  readingTime: '12 min read',
+  excerpt: 'A deep dive into how we approach modern product development—balancing cutting-edge AI capabilities with timeless design principles and the irreplaceable human touch that makes software feel magical.',
+  tag: 'Featured',
+  image: '/hero-illustration.svg',
+  author: 'The Sorcerer Team'
+};
+
 const posts = [
   {
     title: 'Designing Tasteful AI Products',
@@ -8,6 +18,7 @@ const posts = [
     readingTime: '6 min read',
     excerpt: 'How we blend taste, trust, and transparency when weaving AI into consumer-facing experiences.',
     tag: 'AI',
+    category: 'AI & ML'
   },
   {
     title: 'Why We Still Love Monorepos',
@@ -15,6 +26,7 @@ const posts = [
     readingTime: '8 min read',
     excerpt: 'The rituals we use to keep large teams moving fast in a single codebase without chaos.',
     tag: 'Engineering',
+    category: 'Engineering'
   },
   {
     title: 'Shipping From Figma To Prod In 14 Days',
@@ -22,44 +34,287 @@ const posts = [
     readingTime: '5 min read',
     excerpt: 'A play-by-play on the systems, guardrails, and communication cadences that make lightning launches possible.',
     tag: 'Process',
+    category: 'Process'
   },
+  {
+    title: 'The Death of Junior Devs (And Why That\'s Wrong)',
+    date: 'Oct 25, 2024',
+    readingTime: '7 min read',
+    excerpt: 'Why the industry\'s obsession with senior-only teams is creating a talent crisis, and what we can do about it.',
+    tag: 'Culture',
+    category: 'Culture'
+  },
+  {
+    title: 'Building Trust With Async Communication',
+    date: 'Oct 8, 2024',
+    readingTime: '5 min read',
+    excerpt: 'How we maintain transparency and momentum across time zones without endless meetings.',
+    tag: 'Remote Work',
+    category: 'Process'
+  },
+  {
+    title: 'When To Use Serverless (And When Not To)',
+    date: 'Sep 20, 2024',
+    readingTime: '9 min read',
+    excerpt: 'A practical guide to serverless architectures—costs, benefits, pitfalls, and our decision framework.',
+    tag: 'Cloud',
+    category: 'Engineering'
+  },
+  {
+    title: 'The Psychology of Micro-Interactions',
+    date: 'Sep 5, 2024',
+    readingTime: '6 min read',
+    excerpt: 'Why tiny animations and delightful details create outsized emotional impact in your product.',
+    tag: 'Design',
+    category: 'Design'
+  },
+  {
+    title: 'From MVP to Scale: A Real Case Study',
+    date: 'Aug 18, 2024',
+    readingTime: '11 min read',
+    excerpt: 'How we took a weekend prototype to 100K users in 6 months—the good, the bad, and the ugly.',
+    tag: 'Case Study',
+    category: 'Product'
+  },
+  {
+    title: 'AI-Powered Code Reviews: Worth The Hype?',
+    date: 'Aug 2, 2024',
+    readingTime: '7 min read',
+    excerpt: 'Our 3-month experiment with AI code review tools—what worked, what didn\'t, and what surprised us.',
+    tag: 'AI',
+    category: 'AI & ML'
+  }
 ];
+
+const categories = ['All', 'AI & ML', 'Engineering', 'Design', 'Process', 'Culture', 'Product'];
 ---
 
 <Layout title="Blog | The Code Sorcerer">
   <!-- Cursor Glow Effect -->
   <div class="cursor-glow"></div>
 
-  <main class="bg-background-light dark:bg-background-dark py-24">
+  <main class="bg-background-light dark:bg-background-dark py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-      <header class="text-center mb-16 scroll-reveal">
+      <!-- Hero Section -->
+      <header class="text-center mb-20 scroll-reveal relative">
+        <!-- Floating Sparkles -->
+        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div class="absolute top-5 left-1/4 w-2 h-2 bg-primary/30 dark:bg-accent/30 rounded-full animate-pulse"></div>
+          <div class="absolute top-16 right-1/4 w-1.5 h-1.5 bg-accent/40 dark:bg-primary/40 rounded-full animate-pulse delay-100"></div>
+          <div class="absolute bottom-5 left-1/3 w-2.5 h-2.5 bg-primary/20 dark:bg-accent/20 rounded-full animate-pulse delay-200"></div>
+        </div>
+
         <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Journal</p>
-        <h1 class="font-display text-display-md md:text-display-lg font-bold text-gray-900 dark:text-text-dark-primary mt-4">Field Notes From The Spellbook</h1>
-        <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">Thoughts on engineering leadership, AI craft, product taste, and building teams that feel magical.</p>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold gradient-text-animated mt-4">Field Notes From The Spellbook</h1>
+        <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          Thoughts on engineering leadership, AI craft, product taste, and building teams that feel magical.
+        </p>
       </header>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
+      <!-- Featured Post -->
+      <article class="scroll-reveal mb-20 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 rounded-3xl overflow-hidden border border-primary/20 dark:border-accent/20 card-glow-hover group">
+        <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
+          <div class="order-2 md:order-1">
+            <span class="inline-block px-3 py-1 text-xs uppercase tracking-[0.2em] bg-primary text-white rounded-full font-semibold mb-4">
+              {featuredPost.tag}
+            </span>
+            <h2 class="font-display text-heading-1 font-bold text-text-light-primary dark:text-text-dark-primary mb-4 group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
+              {featuredPost.title}
+            </h2>
+            <div class="flex items-center gap-4 text-sm text-text-light-tertiary dark:text-text-dark-tertiary mb-4">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-base">schedule</span>
+                {featuredPost.readingTime}
+              </span>
+              <span>·</span>
+              <span>{featuredPost.date}</span>
+              <span>·</span>
+              <span>{featuredPost.author}</span>
+            </div>
+            <p class="text-body-lg text-text-light-secondary dark:text-text-dark-secondary mb-6 leading-relaxed">
+              {featuredPost.excerpt}
+            </p>
+            <a class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="#">
+              Read Full Story
+              <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+          <div class="order-1 md:order-2 relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/10 dark:to-accent/10 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+            <img class="relative rounded-2xl shadow-card group-hover:scale-105 transition-transform duration-500" src={featuredPost.image} alt={featuredPost.title} />
+          </div>
+        </div>
+      </article>
+
+      <!-- Category Filter -->
+      <div class="scroll-reveal mb-12 flex flex-wrap gap-3 justify-center">
+        {categories.map((category) => (
+          <button class="category-filter px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark hover:border-primary dark:hover:border-accent hover:bg-primary/5 dark:hover:bg-accent/5 hover:-translate-y-0.5" data-category={category}>
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal mb-20">
         {posts.map((post) => (
-          <article class="bg-white dark:bg-surface-dark rounded-3xl p-8 shadow-card border border-gray-100 dark:border-border-dark flex flex-col card-hover group">
-            <span class="text-xs uppercase tracking-[0.2em] text-primary-light dark:text-primary font-semibold">{post.tag}</span>
-            <h2 class="font-display text-heading-2 font-semibold text-gray-900 dark:text-text-dark-primary mt-3 group-hover:text-primary transition-colors duration-300">{post.title}</h2>
-            <p class="text-sm text-gray-500 dark:text-text-dark-tertiary mt-2">{post.date} · {post.readingTime}</p>
-            <p class="mt-4 text-body-md text-gray-600 dark:text-text-dark-secondary flex-1 leading-relaxed">{post.excerpt}</p>
-            <a class="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="#">
+          <article class="blog-post bg-surface-light dark:bg-surface-dark rounded-3xl p-8 shadow-card border border-border-light dark:border-border-dark flex flex-col card-glow-hover group" data-category={post.category}>
+            <div class="mb-4">
+              <span class="inline-block px-3 py-1 text-xs uppercase tracking-[0.2em] bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent rounded-full font-semibold">
+                {post.tag}
+              </span>
+            </div>
+            
+            <h2 class="font-display text-heading-3 font-semibold text-text-light-primary dark:text-text-dark-primary mb-3 group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">
+              {post.title}
+            </h2>
+            
+            <div class="flex items-center gap-3 text-xs text-text-light-tertiary dark:text-text-dark-tertiary mb-4">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                {post.readingTime}
+              </span>
+              <span>·</span>
+              <span>{post.date}</span>
+            </div>
+            
+            <p class="text-body-md text-text-light-secondary dark:text-text-dark-secondary flex-1 leading-relaxed mb-6">
+              {post.excerpt}
+            </p>
+            
+            <a class="inline-flex items-center gap-2 text-primary dark:text-accent font-semibold hover:gap-3 transition-all group/link" href="#">
               Read Story
-              <span class="material-symbols-outlined text-base">north_east</span>
+              <span class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform duration-300">arrow_forward</span>
             </a>
           </article>
         ))}
       </div>
+
+      <!-- Newsletter Signup -->
+      <section class="scroll-reveal">
+        <div class="relative bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5 rounded-3xl p-12 border border-primary/20 dark:border-accent/20 overflow-hidden text-center">
+          <!-- Decorative blur elements -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 dark:bg-accent/10 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 dark:bg-primary/10 rounded-full blur-3xl -z-10"></div>
+
+          <span class="material-symbols-outlined text-primary dark:text-accent text-5xl mb-4 inline-block">mail</span>
+          <h2 class="font-display text-heading-1 font-bold text-text-light-primary dark:text-text-dark-primary mb-4">
+            Join The Sorcerer's Circle
+          </h2>
+          <p class="text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-2xl mx-auto mb-8">
+            Get bi-weekly insights on engineering, AI, and product craft. No spam, just pure magic.
+          </p>
+          
+          <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+            <input 
+              type="email" 
+              placeholder="your@email.com" 
+              class="flex-1 px-6 py-4 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-light-primary dark:text-text-dark-primary placeholder:text-text-light-tertiary dark:placeholder:text-text-dark-tertiary focus:outline-none focus:border-primary dark:focus:border-accent transition-colors"
+              required
+            />
+            <button 
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:-translate-y-1 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+            >
+              <span class="material-symbols-outlined">send</span>
+              Subscribe
+            </button>
+          </form>
+
+          <p class="mt-6 text-sm text-text-light-tertiary dark:text-text-dark-tertiary">
+            <span class="count-up font-semibold text-primary dark:text-accent" data-target="5000" data-suffix="+">0</span> sorcerers already subscribed
+          </p>
+        </div>
+      </section>
     </div>
   </main>
 
   <script>
     import { initAnimations } from '../scripts/animations';
     
+    // Count-up animation for subscriber count
+    function animateCountUp(element: HTMLElement) {
+      const target = parseFloat(element.dataset.target || '0');
+      const suffix = element.dataset.suffix || '';
+      const duration = 2000;
+      const steps = 60;
+      const increment = target / steps;
+      const stepDuration = duration / steps;
+      
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        element.textContent = Math.floor(current).toLocaleString() + suffix;
+      }, stepDuration);
+    }
+
+    // Category filter functionality
+    function initCategoryFilter() {
+      const filters = document.querySelectorAll('.category-filter');
+      const posts = document.querySelectorAll('.blog-post');
+      
+      filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          const category = filter.getAttribute('data-category');
+          
+          // Update active state
+          filters.forEach(f => {
+            f.classList.remove('border-primary', 'dark:border-accent', 'bg-primary/10', 'dark:bg-accent/10');
+            f.classList.add('border-border-light', 'dark:border-border-dark');
+          });
+          filter.classList.remove('border-border-light', 'dark:border-border-dark');
+          filter.classList.add('border-primary', 'dark:border-accent', 'bg-primary/10', 'dark:bg-accent/10');
+          
+          // Filter posts
+          posts.forEach(post => {
+            const postCategory = post.getAttribute('data-category');
+            if (category === 'All' || postCategory === category) {
+              post.classList.remove('hidden');
+              post.classList.add('scroll-reveal');
+            } else {
+              post.classList.add('hidden');
+            }
+          });
+        });
+      });
+      
+      // Set 'All' as active by default
+      const allFilter = document.querySelector('.category-filter[data-category="All"]');
+      if (allFilter) {
+        allFilter.classList.remove('border-border-light', 'dark:border-border-dark');
+        allFilter.classList.add('border-primary', 'dark:border-accent', 'bg-primary/10', 'dark:bg-accent/10');
+      }
+    }
+
+    // Observe stats for animation trigger
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const countUpElements = entry.target.querySelectorAll('.count-up');
+          countUpElements.forEach((el) => {
+            if (!el.classList.contains('animated')) {
+              el.classList.add('animated');
+              animateCountUp(el as HTMLElement);
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
     document.addEventListener('DOMContentLoaded', () => {
       initAnimations();
+      initCategoryFilter();
+      
+      // Observe newsletter section
+      const newsletterSection = document.querySelector('section.scroll-reveal');
+      if (newsletterSection) {
+        statsObserver.observe(newsletterSection);
+      }
     });
   </script>
 </Layout>

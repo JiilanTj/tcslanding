@@ -6,78 +6,242 @@ import Layout from '../layouts/Layout.astro';
   <!-- Cursor Glow Effect -->
   <div class="cursor-glow"></div>
 
-  <main class="bg-background-light dark:bg-background-dark py-24">
+  <main class="bg-background-light dark:bg-background-dark py-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
+      <!-- Hero Section with Floating Sparkles -->
+      <div class="text-center mb-20 scroll-reveal relative">
+        <!-- Floating Sparkles -->
+        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div class="absolute top-10 left-1/4 w-2 h-2 bg-primary/30 dark:bg-accent/30 rounded-full animate-pulse"></div>
+          <div class="absolute top-20 right-1/3 w-1.5 h-1.5 bg-accent/40 dark:bg-primary/40 rounded-full animate-pulse delay-100"></div>
+          <div class="absolute bottom-10 left-1/3 w-2.5 h-2.5 bg-primary/20 dark:bg-accent/20 rounded-full animate-pulse delay-200"></div>
+        </div>
+
         <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Pricing</p>
-        <h1 class="font-display text-display-md md:text-display-lg font-bold text-gray-900 dark:text-text-dark-primary mt-4">Choose Your Spell</h1>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold gradient-text-animated mt-4">Choose Your Spell</h1>
         <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary max-w-2xl mx-auto leading-relaxed">
           Flexible engagement models for founders shipping fast and teams scaling with confidence.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 items-stretch scroll-reveal">
+      <!-- Pricing Cards -->
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch scroll-reveal mb-20">
         {[
           {
             name: 'Starter Spell',
-            price: '$5k/mo',
+            price: '$5k',
+            period: '/month',
             description: 'Perfect for prototypes and early validation.',
-            perks: ['1 senior engineer', 'Weekly sprints', 'Async updates'],
-            cta: 'Book a Discovery Call',
+            perks: [
+              '1 senior engineer',
+              'Weekly sprints',
+              'Async updates',
+              'Slack/Discord access',
+              '2-week sprints'
+            ],
+            cta: 'Book Discovery Call',
             featured: false,
+            icon: 'auto_awesome'
           },
           {
             name: 'Growth Ritual',
-            price: '$15k/mo',
+            price: '$15k',
+            period: '/month',
             description: 'Dedicated duo or trio embedded in your team.',
-            perks: ['2-3 senior makers', 'Product & design support', 'Priority comms'],
+            perks: [
+              '2-3 senior makers',
+              'Product & design support',
+              'Priority comms',
+              'Weekly sync calls',
+              'Custom tech stack',
+              'Code reviews'
+            ],
             cta: 'Request Scope',
             featured: true,
+            icon: 'rocket_launch'
           },
           {
             name: 'Full Sorcerer Mode',
             price: 'Custom',
+            period: '',
             description: 'Full pod covering product, design, AI, and platform.',
-            perks: ['Cross-functional team', 'Dedicated PM', '24/7 on-call & SLAs'],
+            perks: [
+              'Cross-functional team',
+              'Dedicated PM',
+              '24/7 on-call & SLAs',
+              'Architecture consulting',
+              'AI integration',
+              'DevOps & scaling'
+            ],
             cta: 'Talk To Us',
             featured: false,
+            icon: 'workspace_premium'
           },
         ].map((plan) => (
-          <div class={`rounded-3xl p-8 shadow-card border card-hover group ${plan.featured ? 'bg-gradient-to-br from-primary to-accent text-white border-primary scale-105 shadow-glow' : 'bg-white dark:bg-surface-dark border-gray-200 dark:border-border-dark'}`}>
+          <div class={`relative rounded-3xl p-8 shadow-card border card-glow-hover group transition-all duration-300 ${plan.featured ? 'bg-gradient-to-br from-primary to-accent text-white border-primary scale-105 shadow-glow' : 'bg-surface-light dark:bg-surface-dark border-border-light dark:border-border-dark'}`}>
             {plan.featured && <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-white text-primary text-sm font-semibold px-5 py-1.5 rounded-full shadow-lg">Most Popular</span>}
-            <p class="uppercase text-sm tracking-widest font-semibold">{plan.name}</p>
-            <h2 class={`font-display text-display-sm font-bold mt-4`}>{plan.price}</h2>
-            <p class={`mt-3 text-body-md ${plan.featured ? 'text-blue-50' : 'text-gray-600 dark:text-text-dark-secondary'}`}>{plan.description}</p>
-            <ul class="mt-6 space-y-3">
+            
+            <div class="flex items-center gap-3 mb-6">
+              <span class={`material-symbols-outlined text-3xl ${plan.featured ? 'text-white' : 'text-primary dark:text-accent'}`}>{plan.icon}</span>
+              <p class="uppercase text-sm tracking-widest font-semibold">{plan.name}</p>
+            </div>
+
+            <div class="mb-6">
+              <h2 class="font-display text-display-sm font-bold inline-block">{plan.price}</h2>
+              <span class={`text-lg ${plan.featured ? 'text-blue-100' : 'text-gray-600 dark:text-text-dark-tertiary'}`}>{plan.period}</span>
+            </div>
+
+            <p class={`mb-6 text-body-md ${plan.featured ? 'text-blue-50' : 'text-gray-600 dark:text-text-dark-secondary'}`}>{plan.description}</p>
+            
+            <ul class="mb-8 space-y-3">
               {plan.perks.map((perk) => (
                 <li class="flex items-center gap-3">
-                  <span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
-                  <span>{perk}</span>
+                  <span class={`material-symbols-outlined text-lg ${plan.featured ? 'text-green-300' : 'text-green-500'}`}>check_circle</span>
+                  <span class="text-sm">{perk}</span>
                 </li>
               ))}
             </ul>
-            <a class={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-0.5 ${plan.featured ? 'btn-primary bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary-light'}`} href="/contact">
+            
+            <a class={`mt-auto inline-flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${plan.featured ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary-light dark:hover:bg-accent'}`} href="/contact">
               {plan.cta}
             </a>
           </div>
         ))}
       </div>
 
-      <div class="mt-16 text-center scroll-reveal">
-        <p class="text-body-md text-gray-600 dark:text-text-dark-secondary">Need something different? We tailor retainers, workshops, and advisory sessions on demand.</p>
-        <a class="mt-6 inline-flex items-center gap-2 text-primary-light dark:text-primary font-semibold hover:gap-3 transition-all" href="mailto:hello@thecodesorcerer.com">
-          hello@thecodesorcerer.com
-          <span class="material-symbols-outlined text-base">north_east</span>
-        </a>
-      </div>
+      <!-- Trust Badges / Social Proof -->
+      <section class="scroll-reveal mb-20">
+        <div class="bg-surface-light dark:bg-surface-dark rounded-3xl p-10 border border-border-light dark:border-border-dark">
+          <p class="text-center text-sm uppercase tracking-[0.2em] text-text-light-tertiary dark:text-text-dark-tertiary mb-8">Trusted By Sorcerers Worldwide</p>
+          
+          <div class="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              { number: '50+', label: 'Happy Clients', icon: 'sentiment_satisfied' },
+              { number: '98%', label: 'Satisfaction Rate', icon: 'thumb_up' },
+              { number: '100%', label: 'On-Time Delivery', icon: 'schedule' },
+              { number: '24/7', label: 'Support Available', icon: 'support_agent' }
+            ].map((stat) => (
+              <div class="scroll-reveal group">
+                <span class="material-symbols-outlined text-primary dark:text-accent text-3xl mb-2 block group-hover:scale-110 transition-transform duration-300">{stat.icon}</span>
+                <p class="font-display text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">
+                  <span class="count-up" data-target={parseInt(stat.number)} data-suffix={stat.number.replace(/\d+/g, '')}>{stat.number.match(/\d+/) ? '0' : stat.number}</span>
+                </p>
+                <p class="text-sm text-text-light-secondary dark:text-text-dark-tertiary mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="scroll-reveal mb-20">
+        <h2 class="font-display text-heading-1 font-bold text-center text-text-light-primary dark:text-text-dark-primary mb-12">Frequently Asked Questions</h2>
+        
+        <div class="max-w-3xl mx-auto space-y-6">
+          {[
+            {
+              question: 'How quickly can we get started?',
+              answer: 'Typically 3-5 business days after kickoff. We move fast but thoroughly—scoping, contract, and onboarding happen in parallel.'
+            },
+            {
+              question: 'Do you work with non-technical founders?',
+              answer: 'Absolutely. We translate vision into roadmaps, provide clear progress updates, and explain technical decisions in plain language.'
+            },
+            {
+              question: 'What if we need to scale the team mid-project?',
+              answer: 'We can ramp up or down with 2 weeks notice. Most engagements start lean and expand as the product grows.'
+            },
+            {
+              question: 'Do you offer equity-based partnerships?',
+              answer: 'On a case-by-case basis for early-stage startups with compelling vision. Reach out and let\'s talk.'
+            }
+          ].map((faq) => (
+            <div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 border border-border-light dark:border-border-dark card-hover">
+              <h3 class="font-semibold text-text-light-primary dark:text-text-dark-primary mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary dark:text-accent text-xl">help</span>
+                {faq.question}
+              </h3>
+              <p class="text-text-light-secondary dark:text-text-dark-secondary text-sm leading-relaxed pl-7">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="scroll-reveal text-center">
+        <div class="relative bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5 rounded-3xl p-12 border border-primary/20 dark:border-accent/20 overflow-hidden">
+          <!-- Decorative blur elements -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 dark:bg-accent/10 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 dark:bg-primary/10 rounded-full blur-3xl -z-10"></div>
+
+          <h2 class="font-display text-heading-1 font-bold text-text-light-primary dark:text-text-dark-primary mb-4">Need Something Different?</h2>
+          <p class="text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-2xl mx-auto mb-8">
+            We tailor retainers, workshops, and advisory sessions on demand. Let's craft the perfect engagement model for your needs.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="/contact">
+              <span class="material-symbols-outlined">send</span>
+              Start a Conversation
+            </a>
+            <a class="inline-flex items-center gap-2 bg-surface-light dark:bg-surface-dark text-text-light-primary dark:text-text-dark-primary px-8 py-4 rounded-xl font-semibold border border-border-light dark:border-border-dark hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="mailto:hello@thecodesorcerer.com">
+              <span class="material-symbols-outlined">email</span>
+              hello@thecodesorcerer.com
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <script>
     import { initAnimations } from '../scripts/animations';
     
+    // Count-up animation for stats
+    function animateCountUp(element: HTMLElement) {
+      const targetStr = element.dataset.target || '0';
+      const target = parseFloat(targetStr);
+      const suffix = element.dataset.suffix || '';
+      const duration = 2000;
+      const steps = 60;
+      const increment = target / steps;
+      const stepDuration = duration / steps;
+      
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        element.textContent = Math.floor(current).toString() + suffix;
+      }, stepDuration);
+    }
+
+    // Observe stats for animation trigger
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const countUpElement = entry.target.querySelector('.count-up');
+          if (countUpElement && !countUpElement.classList.contains('animated')) {
+            countUpElement.classList.add('animated');
+            animateCountUp(countUpElement as HTMLElement);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    
     document.addEventListener('DOMContentLoaded', () => {
       initAnimations();
+      
+      // Observe all stat cards
+      const statCards = document.querySelectorAll('.scroll-reveal');
+      statCards.forEach(card => {
+        if (card.querySelector('.count-up')) {
+          statsObserver.observe(card);
+        }
+      });
     });
   </script>
 </Layout>

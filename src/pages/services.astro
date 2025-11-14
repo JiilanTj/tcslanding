@@ -6,47 +6,243 @@ import Layout from '../layouts/Layout.astro';
   <!-- Cursor Glow Effect -->
   <div class="cursor-glow"></div>
 
-  <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Header -->
-      <div class="text-center mb-16 scroll-reveal">
-        <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Services</p>
-        <h1 class="font-display text-display-md md:text-display-lg font-bold text-text-light-primary dark:text-text-dark-primary mt-4">Spells We Cast For You</h1>
-        <p class="mt-6 text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-          From high-performance engineering to AI-powered experiences, we help you conjure the product your users can't live without.
-        </p>
-      </div>
-
-      <!-- Services Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
-        {[
-          { icon: 'code', title: 'Product Engineering', body: 'Full-stack development with obsessive attention to quality, scalability, and performance.' },
-          { icon: 'auto_awesome', title: 'AI & Automation', body: 'We embed AI assistants, automation, and intelligent analytics directly into your workflows.' },
-          { icon: 'palette', title: 'Experience Design', body: 'Pixel-perfect UI and intuitive UX that feel magical across every surface.' },
-          { icon: 'security', title: 'Platform Reliability', body: 'Security reviews, infrastructure automation, and SRE practices that make outages vanish.' },
-          { icon: 'hub', title: 'Team Augmentation', body: 'Plug senior engineers, designers, or product strategists directly into your squad.' },
-          { icon: 'trending_up', title: 'Growth Partnerships', body: 'We stay post-launch to iterate, experiment, and scale with you.' },
-        ].map((service) => (
-          <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-card border border-border-light dark:border-border-dark card-glow-hover group">
-            <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/20 mb-5 group-hover:scale-110 transition-transform duration-300">
-              <span class="material-symbols-outlined text-primary-light dark:text-primary text-3xl">{service.icon}</span>
-            </div>
-            <h3 class="font-display text-heading-3 font-semibold text-text-light-primary dark:text-text-dark-primary">{service.title}</h3>
-            <p class="mt-4 text-body-md text-text-light-secondary dark:text-text-dark-tertiary leading-relaxed">{service.body}</p>
+  <main class="bg-background-light dark:bg-background-dark">
+    <!-- Hero Section -->
+    <section class="py-24 md:py-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:via-transparent dark:to-accent/10 pointer-events-none"></div>
+      
+      <!-- Floating sparkles -->
+      <div class="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+      <div class="absolute top-40 right-20 w-3 h-3 bg-accent rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-32 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-16 scroll-reveal">
+          <div class="inline-flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined text-primary text-2xl">auto_awesome</span>
+            <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Our Magical Services</p>
+            <span class="material-symbols-outlined text-accent text-2xl">auto_awesome</span>
           </div>
-        ))}
-      </div>
+          <h1 class="font-display text-display-md md:text-display-lg font-bold text-text-light-primary dark:text-text-dark-primary mt-4">
+            <span class="gradient-text-animated">Spells We Cast</span> For You
+          </h1>
+          <p class="mt-6 text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+            From high-performance engineering to AI-powered experiences, we help you <span class="text-primary dark:text-accent font-semibold">conjure</span> the product your users can't live without.
+          </p>
+        </div>
 
-      <!-- CTA Section -->
-      <div class="mt-20 bg-gradient-to-br from-primary-light to-accent dark:from-primary dark:to-accent text-white rounded-3xl p-12 text-center shadow-glow scroll-reveal">
-        <h2 class="font-display text-heading-1 font-bold">Need a custom ritual?</h2>
-        <p class="mt-4 text-body-lg text-blue-50 max-w-2xl mx-auto">Tell us what you're building. We'll design a bespoke engagement to match.</p>
-        <a class="mt-8 inline-flex items-center justify-center btn-primary bg-white text-primary-light dark:text-primary font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5" href="/pricing">
-          Explore Pricing
-          <span class="material-symbols-outlined ml-2">arrow_forward</span>
-        </a>
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal-stagger">
+          {[
+            { icon: 'code', title: 'Spellforge Development', body: 'Crafting robust backend and frontend systems from scratch with enterprise-grade magic.' },
+            { icon: 'auto_awesome', title: 'Arcane AI Studio', body: 'We embed AI assistants, automation, and intelligent analytics directly into your workflows.' },
+            { icon: 'palette', title: 'Enchant UX/UI', body: 'Pixel-perfect interfaces and intuitive UX that feel magical across every surface.' },
+            { icon: 'security', title: 'CharmGuard Security', body: 'Security reviews, infrastructure automation, and SRE practices that make outages vanish.' },
+            { icon: 'hub', title: 'Sorcerer Squad', body: 'Plug senior engineers, designers, or product strategists directly into your team.' },
+            { icon: 'trending_up', title: 'Growth Rituals', body: 'We stay post-launch to iterate, experiment, and scale with you through continuous magic.' },
+          ].map((service) => (
+            <div class="scroll-reveal bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-card border border-border-light dark:border-border-dark card-glow-hover group relative overflow-hidden text-center">
+              <!-- Hover glow effect -->
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div class="relative">
+                <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 mb-5 mx-auto group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <span class="material-symbols-outlined text-primary-light dark:text-primary text-3xl">{service.icon}</span>
+                </div>
+                <h3 class="font-display text-heading-3 font-semibold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">{service.title}</h3>
+                <p class="mt-4 text-body-md text-text-light-secondary dark:text-text-dark-tertiary leading-relaxed">{service.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Featured Services Deep Dive -->
+    <section class="py-24 bg-surface-light dark:bg-surface-dark relative overflow-hidden">
+      <!-- Magical grid pattern background -->
+      <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 30px 30px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="material-symbols-outlined text-primary text-6xl mb-4 inline-block">auto_awesome</span>
+          <h2 class="font-display text-heading-1 font-bold text-text-light-primary dark:text-text-dark-primary">
+            Our <span class="gradient-text-animated">Signature Spells</span>
+          </h2>
+          <p class="mt-4 text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-2xl mx-auto">The enchantments we've perfected through years of <span class="text-accent font-semibold">magical practice</span>.</p>
+        </div>
+
+        <!-- Spellforge Development -->
+        <div class="grid md:grid-cols-2 gap-16 items-center mb-24 scroll-reveal">
+          <div class="scroll-reveal-left">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent text-white mb-6 shadow-glow animate-pulse">
+              <span class="material-symbols-outlined text-4xl">code</span>
+            </span>
+            <h3 class="font-display text-heading-2 font-bold text-text-light-primary dark:text-text-dark-primary">
+              Spellforge Development
+            </h3>
+            <p class="mt-4 text-body-lg text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
+              We build <span class="text-primary dark:text-accent font-semibold">production-grade</span> systems that scale from 0 to millions of users. Every line of code is crafted with <span class="gradient-text-animated">enterprise-level</span> standards.
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                'Microservices architecture',
+                'Real-time data pipelines',
+                'Cloud-native infrastructure',
+                'API design & integration',
+                'Database optimization',
+                'Performance engineering'
+              ].map((item) => (
+                <li class="flex items-center gap-3 group">
+                  <span class="material-symbols-outlined text-primary group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">auto_awesome</span>
+                  <span class="text-text-light-primary dark:text-text-dark-secondary group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="relative scroll-reveal-right">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl rounded-full animate-pulse"></div>
+            <div class="relative bg-background-light dark:bg-background-dark p-8 rounded-2xl border border-border-light dark:border-border-dark shadow-glow hover:shadow-xl transition-shadow duration-300">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500 animate-pulse" style="animation-delay: 0.2s;"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse" style="animation-delay: 0.4s;"></div>
+                </div>
+                <span class="text-xs text-text-light-secondary dark:text-text-dark-tertiary font-mono">spellforge.ts</span>
+              </div>
+              <pre class="text-sm text-text-light-secondary dark:text-text-dark-secondary font-mono overflow-x-auto"><code>{`const castSpell = async () => {
+  const magic = await invoke({
+    spell: "production-ready",
+    power: "enterprise-grade",
+    speed: "blazing-fast"
+  });
+  
+  return magic.deploy();
+};`}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arcane AI Studio -->
+        <div class="grid md:grid-cols-2 gap-16 items-center scroll-reveal">
+          <div class="order-2 md:order-1 relative scroll-reveal-left">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 blur-3xl rounded-full animate-pulse"></div>
+            <div class="relative grid grid-cols-2 gap-4">
+              {[
+                { icon: 'psychology', label: 'Machine Learning' },
+                { icon: 'model_training', label: 'Neural Networks' },
+                { icon: 'smart_toy', label: 'AI Agents' },
+                { icon: 'analytics', label: 'Predictive Models' }
+              ].map((item) => (
+                <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark text-center group hover:scale-105 transition-all duration-300 shadow-card hover:shadow-glow cursor-pointer">
+                  <span class="material-symbols-outlined text-primary dark:text-accent text-4xl mb-3 block group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
+                  <p class="text-sm font-semibold text-text-light-primary dark:text-text-dark-primary">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="order-1 md:order-2 scroll-reveal-right">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary text-white mb-6 shadow-glow animate-pulse">
+              <span class="material-symbols-outlined text-4xl">psychology</span>
+            </span>
+            <h3 class="font-display text-heading-2 font-bold text-text-light-primary dark:text-text-dark-primary">
+              Arcane AI Studio
+            </h3>
+            <p class="mt-4 text-body-lg text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
+              Transform your product with <span class="text-accent font-semibold">AI-powered intelligence</span>. From chatbots to computer vision, we bring <span class="gradient-text-animated">cutting-edge AI</span> to your users.
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                'Custom LLM integration',
+                'Computer vision systems',
+                'Natural language processing',
+                'Recommendation engines',
+                'Anomaly detection',
+                'AI-powered automation'
+              ].map((item) => (
+                <li class="flex items-center gap-3 group">
+                  <span class="material-symbols-outlined text-accent group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">auto_awesome</span>
+                  <span class="text-text-light-primary dark:text-text-dark-secondary group-hover:text-accent transition-colors duration-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden">
+      <!-- Subtle grid pattern like in index -->
+      <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 30px 30px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 scroll-reveal">
+          <span class="material-symbols-outlined text-accent text-6xl mb-4 inline-block">auto_awesome</span>
+          <h2 class="font-display text-heading-1 font-bold text-text-light-primary dark:text-text-dark-primary">
+            Our <span class="gradient-text-animated">Enchantment</span> Process
+          </h2>
+          <p class="mt-4 text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-2xl mx-auto">How we transform your vision into reality, <span class="text-primary dark:text-accent font-semibold">step by magical step</span>.</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8 scroll-reveal-stagger">
+          {[
+            { step: '01', icon: 'lightbulb', title: 'Discovery', desc: 'Deep dive into your goals, challenges, and vision.' },
+            { step: '02', icon: 'draw', title: 'Spell Blueprint', desc: 'Craft the blueprint for your magical solution.' },
+            { step: '03', icon: 'code', title: 'Summoning', desc: 'Build with precision, speed, and excellence.' },
+            { step: '04', icon: 'rocket_launch', title: 'Launch Magic', desc: 'Deploy with confidence and ongoing support.' }
+          ].map((phase) => (
+            <div class="scroll-reveal text-center group">
+              <div class="relative inline-flex items-center justify-center w-20 h-20 mb-6">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow"></div>
+                <span class="material-symbols-outlined text-white text-4xl relative z-10 group-hover:scale-110 transition-transform duration-300">{phase.icon}</span>
+                <span class="absolute -top-2 -right-2 w-8 h-8 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">{phase.step}</span>
+              </div>
+              <h3 class="font-display text-heading-4 font-semibold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary dark:group-hover:text-accent transition-colors duration-300">{phase.title}</h3>
+              <p class="mt-3 text-body-md text-text-light-secondary dark:text-text-dark-tertiary">{phase.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-light dark:bg-surface-dark">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-br from-primary-light to-accent dark:from-primary dark:to-accent text-white rounded-3xl p-12 md:p-16 text-center shadow-glow scroll-reveal relative overflow-hidden">
+          <!-- Decorative elements -->
+          <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+          </div>
+          
+          <div class="relative z-10">
+            <span class="material-symbols-outlined text-white/30 text-7xl mb-6 inline-block">auto_awesome</span>
+            <h2 class="font-display text-heading-1 font-bold">Need a custom ritual?</h2>
+            <p class="mt-6 text-xl text-blue-50 max-w-2xl mx-auto leading-relaxed">
+              Tell us what you're building. We'll design a bespoke engagement to match.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                class="inline-flex items-center justify-center bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1" 
+                href="/pricing"
+              >
+                <span>Explore Pricing</span>
+                <span class="material-symbols-outlined ml-2">arrow_forward</span>
+              </a>
+              <a 
+                class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary transition-all duration-300" 
+                href="/contact"
+              >
+                <span>Book a Call</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>

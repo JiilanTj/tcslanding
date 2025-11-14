@@ -28,12 +28,14 @@ import Layout from '../layouts/Layout.astro';
 
       <section class="grid md:grid-cols-3 gap-8 scroll-reveal">
         {[
-          { label: 'Years of Shipping', value: '12+' },
-          { label: 'Products Launched', value: '80+' },
-          { label: 'Avg. Engagement', value: '6+ months' },
+          { label: 'Years of Shipping', value: '12+', target: 12, suffix: '+' },
+          { label: 'Products Launched', value: '80+', target: 80, suffix: '+' },
+          { label: 'Avg. Engagement', value: '6+ months', target: 6, suffix: '+ months' },
         ].map((stat) => (
-          <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 text-center shadow-sm border border-gray-100 dark:border-gray-800 card-hover group">
-            <p class="font-display text-4xl text-primary font-bold group-hover:scale-110 transition-transform duration-300">{stat.value}</p>
+          <div class="scroll-reveal bg-white dark:bg-gray-900 rounded-2xl p-8 text-center shadow-sm border border-gray-100 dark:border-gray-800 card-hover group">
+            <p class="font-display text-4xl text-primary font-bold group-hover:scale-110 transition-transform duration-300">
+              <span class="count-up" data-target={stat.target} data-suffix={stat.suffix}>0</span>
+            </p>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{stat.label}</p>
           </div>
         ))}
@@ -66,9 +68,51 @@ import Layout from '../layouts/Layout.astro';
   <script>
     import { initAnimations } from '../scripts/animations';
     
+    // Count-up animation for stats
+    function animateCountUp(element: HTMLElement) {
+      const target = parseFloat(element.dataset.target || '0');
+      const suffix = element.dataset.suffix || '';
+      const duration = 2000;
+      const steps = 60;
+      const increment = target / steps;
+      const stepDuration = duration / steps;
+      
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        
+        element.textContent = Math.floor(current).toString() + suffix;
+      }, stepDuration);
+    }
+
+    // Observe stats for animation trigger
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const countUpElement = entry.target.querySelector('.count-up');
+          if (countUpElement && !countUpElement.classList.contains('animated')) {
+            countUpElement.classList.add('animated');
+            animateCountUp(countUpElement as HTMLElement);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    
     // Initialize animations when page loads
     document.addEventListener('DOMContentLoaded', () => {
       initAnimations();
+      
+      // Observe all stat cards
+      const statCards = document.querySelectorAll('.scroll-reveal');
+      statCards.forEach(card => {
+        if (card.querySelector('.count-up')) {
+          statsObserver.observe(card);
+        }
+      });
     });
   </script>
 </Layout>
