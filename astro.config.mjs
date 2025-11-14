@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	integrations: [tailwind()],
 	build: {
-		inlineStylesheets: 'auto',
+		inlineStylesheets: 'always',
 	},
 	vite: {
 		build: {

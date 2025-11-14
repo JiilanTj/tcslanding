@@ -11,36 +11,39 @@ export interface Props {
 }
 
 const { title, description = 'The Code Sorcerer is a senior-only software agency specializing in production-ready apps, AI systems, and digital platforms. We deliver magical results with expert engineering.', keywords = 'software agency, senior engineers, AI, app development, digital platforms, The Code Sorcerer', canonical } = Astro.props;
+const gtmId = import.meta.env.PUBLIC_GTM_ID ?? 'GTM-WJF4D4LH';
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google Tag Manager - Deferred for better performance -->
   <script is:inline>
-  (function() {
-    // Defer GTM loading to after page load
-    function loadGTM() {
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WJF4D4LH');
+    const GTM_ID = {JSON.stringify(gtmId)};
+    if (GTM_ID) {
+      (function() {
+        let gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer',GTM_ID);
+        }
+        
+        // Only load when the user interacts or the browser is idle
+        ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function(event) {
+          window.addEventListener(event, loadGTM, { once: true, passive: true });
+        });
+        
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGTM, { timeout: 20000 });
+        } else {
+          setTimeout(loadGTM, 20000);
+        }
+      })();
     }
-    
-    // Load GTM after page load or on user interaction
-    if (document.readyState === 'complete') {
-      setTimeout(loadGTM, 1000);
-    } else {
-      window.addEventListener('load', function() {
-        setTimeout(loadGTM, 1000);
-      });
-    }
-    
-    // Also load on first user interaction for better analytics
-    ['scroll', 'mousemove', 'touchstart'].forEach(function(event) {
-      window.addEventListener(event, loadGTM, { once: true, passive: true });
-    });
-  })();
   </script>
   <!-- End Google Tag Manager -->
   <!-- Structured Data: Organization & WebSite -->
