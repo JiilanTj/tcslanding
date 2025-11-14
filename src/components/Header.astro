@@ -1,0 +1,34 @@
+---
+import ThemeSwitcher from './ThemeSwitcher.astro';
+---
+
+<header>
+  <nav class="bg-background-light dark:bg-background-dark sticky top-0 z-50 shadow-sm dark:shadow-md dark:shadow-gray-900">
+    <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img alt="The Code Sorcerer Logo" class="h-8 w-auto" src="/tcslogo.png"/>
+      </div>
+      
+      <div class="hidden lg:flex items-center space-x-8">
+        <a class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors font-medium" href="#">Home</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Services</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Work</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Pricing</a>
+        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a>
+      </div>
+      
+      <div class="hidden lg:flex items-center space-x-4">
+        <ThemeSwitcher />
+        <a class="bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="#">Book a Call</a>
+      </div>
+      
+      <div class="lg:hidden flex items-center space-x-4">
+        <ThemeSwitcher />
+        <button class="text-gray-900 dark:text-white" id="mobile-menu-button">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

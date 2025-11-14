@@ -1,11 +1,340 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<Layout>
-	<Welcome />
+<Layout title="The Code Sorcerer - Software Agency">
+<main>
+<section class="bg-background-light dark:bg-background-dark py-24 md:py-32">
+<div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div class="text-center md:text-left">
+<h1 class="font-display text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">We Don’t Code. We Cast Spells.</h1>
+<p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto md:mx-0">A high-taste software agency crafting world-class apps, AI systems, and digital products with precision — like sorcery.</p>
+<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="bg-primary text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-primary-light transition-colors" href="#">Book a Call</a>
+<a class="bg-gray-900 dark:bg-gray-800 text-white font-medium py-4 px-8 rounded-lg text-center hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors" href="#">View Our Work</a>
+</div>
+</div>
+<div class="relative flex justify-center">
+<img alt="Abstract tech shapes illustration with pixel sparks" class="max-w-md w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTtRljq91k06bCvWF3LfKlR9H2kzUDW72QCQPiEFIQu6tOZF9gEl1IDLB4m3cOKkOhnwknr_gGfps_1cgcDktkTlvGYztlbMDJfixdOkfoE9ntjj_MOmZZibzYv6s6pb7hQ_5TrUCRtuA9fCPQlh1TW3bWf2eGRolwfi-UAr2pia9WCU1_zlBdt1n8onsqE_k8B2mz0w7hbJjRkYQeC7joOdKLYhyM0MrOkuDV2zQkW3dDxqwE84nBYz_RQD_tajnlOfw-UdZ_gwQ"/>
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full -z-10"></div>
+</div>
+</div>
+</section>
+<section class="bg-neutral-silver dark:bg-gray-900/50 py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold text-gray-900 dark:text-white">Why Work With The Code Sorcerer?</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We bring a touch of magic to the software development process, ensuring exceptional quality and results.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border-t-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">rocket_launch</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Senior-level Development Speed</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Our experienced sorcerers deliver production-ready code at lightning speed.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border-t-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">hub</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Craftsmanship-first Engineering</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">We build robust foundations that grow with your product, from startup to enterprise.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border-t-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">design_services</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Enterprise-grade Security</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Enchanting user experiences that are both beautiful and intuitive to use.</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg border-t-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">verified</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Delivery That Feels Like Magic</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">No smoke and mirrors. We believe in clear, direct collaboration every step of the way.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold text-gray-900 dark:text-white">What We Can Summon for Your Product</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Our grimoire is filled with spells for every stage of the product lifecycle.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">code</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Spellforge Development</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Crafting robust backend and frontend systems from scratch.</p>
+</div>
+</div>
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">layers</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Arcane AI Studio</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Creating responsive and performant applications for every device.</p>
+</div>
+</div>
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Summoner’s MVP Lab</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Transforming ideas into visually stunning and user-friendly designs.</p>
+</div>
+</div>
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">security</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">CharmGuard Security</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Automating deployment and scaling your infrastructure magically.</p>
+</div>
+</div>
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">palette</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Enchant UX/UI</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Unlocking insights from your data with powerful analytics and AI.</p>
+</div>
+</div>
+<div class="group relative bg-neutral-silver dark:bg-gray-900/50 p-8 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-2xl"></div>
+<div class="relative">
+<span class="material-symbols-outlined text-primary text-4xl">insights</span>
+<h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">Divination Analytics</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Integrating intelligent features to make your product smarter.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-dark text-white py-24">
+<div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-display text-4xl font-bold">Engineering Meets Sorcery</h2>
+<p class="mt-4 text-lg text-gray-300">We combine rigorous engineering principles with creative problem-solving to deliver magical results. Our spellbook includes:</p>
+<ul class="mt-8 space-y-4">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Ultra-fast development</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Microservices architecture</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> AI-powered capabilities</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Pixel-perfect frontend</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Enterprise security</li>
+</ul>
+</div>
+<div class="relative flex justify-center items-center">
+<img alt="Glowing blueprint tech illustration" class="max-w-md w-full opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-gXjy0nXJMwze73b8h_GNVweRRxr7EVZeA1Fcolle1bQsztqTeyO7QHQyUI5UudURANW-ehZaQ1k-bX3-DNAG5yY8Pl2UM2BL6XXiK3kqrhwsinbKHSSLiOyqTbkWUl22vxaCHYKCaPdry-ErvA7TvROYiqVfveryVngERI8YYjnem2lPJ_LziK5DYCTnNls2-TaDa2uzuatrdlxSwiBM6-qSZDtIZtuUXuaHdQAY9OpHhkVaiZosveaZdg1QZzokm6nAJNBk_qI"/>
+<div class="absolute inset-0 bg-accent/20 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold text-gray-900 dark:text-white">Our Spells in the Real World</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">See how our code magic has transformed businesses.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="group relative rounded-lg overflow-hidden shadow-lg">
+<img alt="Case study preview for Project Alchemy" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP0hLp7fYtepmFv9RUNx3HYFE9-CW9l-RhTVWI6QjLi36owBdAaONndZR_N8LuxjM3kYtjbm7Jbboh7pmy-JI4HY_jEfsrd6Ydv15lAX055anOntXUltDdU98pyMHVGlbAaV4B-ry8f0UMsJo_Z6da5N21MHTptVJ7JADo_Rk11k4CrqQx1-lawuTSE1ODUNahkEvRNI2bLfFDoiEmhI-6aVJaxHJHyE0k_pKqhhmds9Zz7Q_acpNFGSU5Q7xB5VqKJabELrgjYT8"/>
+<div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-4xl mb-2">spark</span>
+<h3 class="font-display text-2xl font-bold">Project Alchemy</h3>
+<p class="mt-2">Transformed a legacy system into a modern, scalable platform.</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden shadow-lg">
+<img alt="Case study preview for Nova Portal" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCThmD1Cf0JlGVCZ4CseMju2sBYbDimi4ZkYrd2o_gJ0p13pZAkxGqd-Vyz5dPZKcK2-7ZRnlx0UrnZKybTB47X8Vui_5Z-mtc0dY7dpssEidunN-YmiypsJjCAAcq-5il9ec16L6IkTGnwTbju0SyOMhuOcyR0zsN-jgHZCQYlf3nNBxCwmp0ISkUu6daBl8pUpsPHf7Vwa030LkBb6kCNo6-AArq_gY2-Bd3b073i4UWfLBEn7PjKB4kgvyqMkrn3oDPbaGg1kD4"/>
+<div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-4xl mb-2">spark</span>
+<h3 class="font-display text-2xl font-bold">Nova Portal</h3>
+<p class="mt-2">Built a customer portal that reduced support tickets by 60%.</p>
+</div>
+</div>
+<div class="group relative rounded-lg overflow-hidden shadow-lg">
+<img alt="Case study preview for Quantum Leap" class="w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz-Dt-pmOm0XLO_qgVZJyTCgEsdqiXvEeo14FHqWj5yMMKARxcuJmKI6NnGX9UU_uVkiVTrcFDEmzGASsb-3kCd19hLpyHy9stt_Z-cSQ-8u-paqdNeI1W0prGzPWo6tM3zGmGGqr9HcnPUz31A1fupotGAcdJwWgzbZTr1L-rlhfdX-BlMjG0m7RMZDEXHbhXs5JeumLPnPYlIkViUbSb1P-Mw8-wN9u4xdx4yfdToGlLhb8a_svryc_a7Mbs3YN4F9cZTNTAWgc"/>
+<div class="absolute inset-0 bg-primary/80 flex flex-col items-center justify-center p-8 text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="material-symbols-outlined text-4xl mb-2">spark</span>
+<h3 class="font-display text-2xl font-bold">Quantum Leap</h3>
+<p class="mt-2">Developed an AI model that increased user engagement by 200%.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-neutral-silver dark:bg-gray-900/50 py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="font-display text-4xl font-bold text-gray-900 dark:text-white">How We Cast the Spell</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Our four-step process ensures a seamless journey from concept to creation.</p>
+</div>
+<div class="relative">
+<div aria-hidden="true" class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 hidden md:block"></div>
+<div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+<div class="md:text-right">
+<div class="relative inline-block">
+<span class="absolute -right-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">1. Discovery</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">We dive deep into your goals to architect the perfect solution.</p>
+</div>
+</div>
+<div></div>
+<div></div>
+<div class="md:text-left">
+<div class="relative inline-block">
+<span class="absolute -left-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">2. Spell Blueprint</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Crafting intuitive interfaces and robust system designs.</p>
+</div>
+</div>
+<div class="md:text-right">
+<div class="relative inline-block">
+<span class="absolute -right-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">3. Crafting</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Our senior developers bring the designs to life with clean, efficient code.</p>
+</div>
+</div>
+<div></div>
+<div></div>
+<div class="md:text-left">
+<div class="relative inline-block">
+<span class="absolute -left-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">4. Enchantment</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">We ensure a smooth launch and provide continuous support and enhancements.</p>
+</div>
+</div>
+<div class="md:text-right">
+<div class="relative inline-block">
+<span class="absolute -right-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">5. Summoning</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">Our senior developers bring the designs to life with clean, efficient code.</p>
+</div>
+</div>
+<div></div>
+<div></div>
+<div class="md:text-left">
+<div class="relative inline-block">
+<span class="absolute -left-8 top-1/2 -translate-y-1/2 h-4 w-4 rounded-full bg-primary hidden md:block"></span>
+<h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">6. Ongoing Magic</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">We ensure a smooth launch and provide continuous support and enhancements.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-background-light dark:bg-background-dark py-24">
+<div class="container mx-auto px-6 text-center">
+<span class="material-symbols-outlined text-primary text-6xl">format_quote</span>
+<blockquote class="mt-6 max-w-3xl mx-auto">
+<p class="font-display text-2xl md:text-3xl font-medium text-gray-900 dark:text-white">"Working with The Code Sorcerer felt like magic. They delivered our complex platform ahead of schedule and the quality was beyond our wildest dreams."</p>
+</blockquote>
+<div class="mt-8 flex items-center justify-center gap-4">
+<img alt="Avatar of Jane Doe" class="h-14 w-14 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRrTXJQKuleG-1b7usS-oZoE_ROjdCfdhBN5rj1xHocr5iTv46_ob6h2Tuzfai9EomO3vUbdFMEoWaDq030aJkm1QjiZrjtVlr9JSCLEbtf_xJIV23NveuZf4avEny37GOyupduxLsZXHJ4RjWIIi1atCOHJgD58kY8izaOZtT9qKkwWzxsTy-omLYfKia9cbIGbuC1mKuFlEnGbIQqZ8s3DQJUXCZnMHUvaxvT_PMHhQfK5gmF94xrqOuqpk-S3ImT4694sr5iao"/>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Jane Doe</p>
+<p class="text-gray-600 dark:text-gray-400">CEO, Tech Innovators Inc.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-neutral-silver dark:bg-gray-900/50 py-24">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display text-4xl font-bold text-gray-900 dark:text-white">Choose Your Spell</h2>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Flexible plans to suit your project's needs, from quick enchantments to grand magical creations.</p>
+</div>
+<div class="grid lg:grid-cols-3 gap-8 items-center">
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+<h3 class="font-display text-xl font-semibold text-gray-900 dark:text-white">Starter Spell</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">For small projects &amp; prototypes.</p>
+<p class="mt-6 font-display text-4xl font-bold text-gray-900 dark:text-white">$5k<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/mo</span></p>
+<ul class="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> 1 Senior Developer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Weekly Sprints</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Basic Support</li>
+</ul>
+<a class="mt-8 block w-full text-center bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" href="#">Choose Plan</a>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-2xl border-2 border-primary relative">
+<span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+<h3 class="font-display text-xl font-semibold text-primary">Growth Ritual</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">For growing products &amp; teams.</p>
+<p class="mt-6 font-display text-4xl font-bold text-gray-900 dark:text-white">$15k<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/mo</span></p>
+<ul class="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Dedicated Team (2-3)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Agile Development</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Priority Support</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> UI/UX Design</li>
+</ul>
+<a class="mt-8 block w-full text-center bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="#">Choose Plan</a>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+<h3 class="font-display text-xl font-semibold text-gray-900 dark:text-white">Full Sorcerer Mode</h3>
+<p class="mt-2 text-gray-600 dark:text-gray-400">For large-scale applications.</p>
+<p class="mt-6 font-display text-4xl font-bold text-gray-900 dark:text-white">Custom</p>
+<ul class="mt-6 space-y-3 text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Full Product Team</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> Dedicated PM</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-green-500 text-lg">check</span> 24/7 Support &amp; SLA</li>
+</ul>
+<a class="mt-8 block w-full text-center bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary py-24">
+<div class="container mx-auto px-6 text-center text-white relative">
+<span class="material-symbols-outlined absolute top-4 left-8 text-white/20 text-3xl opacity-50 -rotate-12">spark</span>
+<span class="material-symbols-outlined absolute bottom-8 right-16 text-white/20 text-5xl opacity-50 rotate-12">auto_awesome</span>
+<h2 class="font-display text-4xl font-bold">Ready to Build Something Magical?</h2>
+<p class="mt-4 text-lg max-w-2xl mx-auto text-blue-100">Let's talk about how The Code Sorcerer can bring your vision to life.</p>
+<div class="mt-10">
+<a class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-blue-50 transition-colors" href="#">Book a Call</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark text-white">
+<div class="container mx-auto px-6 py-16">
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<img alt="The Code Sorcerer Logo" class="h-8 w-auto filter invert brightness-0" src="/tcslogo.png"/>
+<p class="mt-4 text-gray-400">Engineering Meets Sorcery.</p>
+</div>
+<div>
+<h4 class="font-semibold tracking-wider uppercase">Navigation</h4>
+<ul class="mt-4 space-y-2">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Home</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Services</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Work</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">About</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold tracking-wider uppercase">Links</h4>
+<ul class="mt-4 space-y-2">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Pricing</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold tracking-wider uppercase">Follow Us</h4>
+<div class="mt-4 flex space-x-4">
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.638 2H6.362A4.362 4.362 0 002 6.362v11.276A4.362 4.362 0 006.362 22h11.276A4.362 4.362 0 0022 17.638V6.362A4.362 4.362 0 0017.638 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+<p>© 2024 The Code Sorcerer. All rights reserved.</p>
+</div>
+</div>
+</footer>
 </Layout>
