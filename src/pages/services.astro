@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services | The Code Sorcerer">
+  <main class="bg-background-light dark:bg-background-dark py-24">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary">Services</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Spells We Cast For You</h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          From high-performance engineering to AI-powered experiences, we help you conjure the product your users can’t live without.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { icon: 'code', title: 'Product Engineering', body: 'Full-stack development with obsessive attention to quality, scalability, and performance.' },
+          { icon: 'auto_awesome', title: 'AI & Automation', body: 'We embed AI assistants, automation, and intelligent analytics directly into your workflows.' },
+          { icon: 'palette', title: 'Experience Design', body: 'Pixel-perfect UI and intuitive UX that feel magical across every surface.' },
+          { icon: 'security', title: 'Platform Reliability', body: 'Security reviews, infrastructure automation, and SRE practices that make outages vanish.' },
+          { icon: 'hub', title: 'Team Augmentation', body: 'Plug senior engineers, designers, or product strategists directly into your squad.' },
+          { icon: 'trending_up', title: 'Growth Partnerships', body: 'We stay post-launch to iterate, experiment, and scale with you.' },
+        ].map((service) => (
+          <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+            <span class="material-symbols-outlined text-primary text-4xl">{service.icon}</span>
+            <h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">{service.title}</h3>
+            <p class="mt-3 text-gray-600 dark:text-gray-400">{service.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-primary text-white rounded-2xl p-10 text-center">
+        <h2 class="font-display text-3xl font-bold">Need a custom ritual?</h2>
+        <p class="mt-4 text-blue-100">Tell us what you’re building. We’ll design a bespoke engagement to match.</p>
+        <a class="mt-6 inline-flex items-center justify-center bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors" href="/pricing">Explore Pricing</a>
+      </div>
+    </div>
+  </main>
+</Layout>

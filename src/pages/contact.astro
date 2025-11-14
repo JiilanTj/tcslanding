@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | The Code Sorcerer">
+  <main class="bg-background-light dark:bg-background-dark py-24">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="text-center mb-12">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary">Contact</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Let’s Conjure Something</h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Tell us about the product you’re building and we’ll set up a jam session.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 p-10">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+              Name
+              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="text" placeholder="Ada Lovelace"/>
+            </label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+              Email
+              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="email" placeholder="you@company.com"/>
+            </label>
+          </div>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+            Company
+            <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="text" placeholder="The Code Sorcerer"/>
+          </label>
+          <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+            What are you looking to build?
+            <textarea class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tell us about timelines, scope, goals…"></textarea>
+          </label>
+          <button class="w-full bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary-light transition-colors" type="submit">
+            Send Message
+          </button>
+        </form>
+
+        <div class="mt-10 text-center text-gray-600 dark:text-gray-400">
+          Prefer email? <a class="text-primary font-semibold" href="mailto:hello@thecodesorcerer.com">hello@thecodesorcerer.com</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

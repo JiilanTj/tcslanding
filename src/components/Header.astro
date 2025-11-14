@@ -1,34 +1,59 @@
 ---
 import ThemeSwitcher from './ThemeSwitcher.astro';
+
+type NavLink = {
+  label: string;
+  href: string;
+};
+
+const navLinks: NavLink[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
+  { label: 'About', href: '/about' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Blog', href: '/blog' },
+];
+
+const { pathname } = Astro.url;
+
+const isActive = (href: string): boolean => {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+};
 ---
 
-<header>
-  <nav class="bg-background-light dark:bg-background-dark sticky top-0 z-50 shadow-sm dark:shadow-md dark:shadow-gray-900">
-    <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+<header class="relative z-50">
+  <nav class="fixed top-0 left-0 right-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur supports-[backdrop-filter]:bg-background-light/80 supports-[backdrop-filter]:dark:bg-background-dark/80 shadow-sm dark:shadow-md dark:shadow-gray-900">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
-        <img alt="The Code Sorcerer Logo" class="h-8 w-auto" src="/tcslogo.png"/>
+        <img alt="The Code Sorcerer Logo" class="h-12 md:h-14 w-auto" src="/tcs.svg"/>
       </div>
       
       <div class="hidden lg:flex items-center space-x-8">
-        <a class="text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors font-medium" href="#">Home</a>
-        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Services</a>
-        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Work</a>
-        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
-        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Pricing</a>
-        <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a>
+        {navLinks.map((link) => (
+          <a
+            class={`font-medium transition-colors ${isActive(link.href) ? 'text-primary dark:text-primary' : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary'}`}
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
       </div>
       
       <div class="hidden lg:flex items-center space-x-4">
         <ThemeSwitcher />
-        <a class="bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="#">Book a Call</a>
+        <a class="bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-light transition-colors" href="/#cta">Book a Call</a>
       </div>
       
       <div class="lg:hidden flex items-center space-x-4">
         <ThemeSwitcher />
-        <button class="text-gray-900 dark:text-white" id="mobile-menu-button">
+        <button class="text-gray-900 dark:text-white" id="mobile-menu-button" aria-label="Open menu">
           <span class="material-symbols-outlined">menu</span>
         </button>
       </div>
     </div>
   </nav>
+  <div class="h-[88px] md:h-[96px]"></div>
 </header>

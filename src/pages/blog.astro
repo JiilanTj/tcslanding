@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: 'Designing Tasteful AI Products',
+    date: 'Jan 12, 2025',
+    readingTime: '6 min read',
+    excerpt: 'How we blend taste, trust, and transparency when weaving AI into consumer-facing experiences.',
+    tag: 'AI',
+  },
+  {
+    title: 'Why We Still Love Monorepos',
+    date: 'Dec 4, 2024',
+    readingTime: '8 min read',
+    excerpt: 'The rituals we use to keep large teams moving fast in a single codebase without chaos.',
+    tag: 'Engineering',
+  },
+  {
+    title: 'Shipping From Figma To Prod In 14 Days',
+    date: 'Nov 18, 2024',
+    readingTime: '5 min read',
+    excerpt: 'A play-by-play on the systems, guardrails, and communication cadences that make lightning launches possible.',
+    tag: 'Process',
+  },
+];
+---
+
+<Layout title="Blog | The Code Sorcerer">
+  <main class="bg-background-light dark:bg-background-dark py-24">
+    <div class="container mx-auto px-6">
+      <header class="text-center mb-16">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary">Journal</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Field Notes From The Spellbook</h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Thoughts on engineering leadership, AI craft, product taste, and building teams that feel magical.</p>
+      </header>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col">
+            <span class="text-xs uppercase tracking-[0.2em] text-primary">{post.tag}</span>
+            <h2 class="font-display text-2xl font-semibold text-gray-900 dark:text-white mt-3">{post.title}</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">{post.date} · {post.readingTime}</p>
+            <p class="mt-4 text-gray-600 dark:text-gray-300 flex-1">{post.excerpt}</p>
+            <a class="mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all" href="#">
+              Read Story
+              <span class="material-symbols-outlined text-base">north_east</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pricing | The Code Sorcerer">
+  <main class="bg-background-light dark:bg-background-dark py-24">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary">Pricing</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Choose Your Spell</h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Flexible engagement models for founders shipping fast and teams scaling with confidence.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+        {[
+          {
+            name: 'Starter Spell',
+            price: '$5k/mo',
+            description: 'Perfect for prototypes and early validation.',
+            perks: ['1 senior engineer', 'Weekly sprints', 'Async updates'],
+            cta: 'Book a Discovery Call',
+            featured: false,
+          },
+          {
+            name: 'Growth Ritual',
+            price: '$15k/mo',
+            description: 'Dedicated duo or trio embedded in your team.',
+            perks: ['2-3 senior makers', 'Product & design support', 'Priority comms'],
+            cta: 'Request Scope',
+            featured: true,
+          },
+          {
+            name: 'Full Sorcerer Mode',
+            price: 'Custom',
+            description: 'Full pod covering product, design, AI, and platform.',
+            perks: ['Cross-functional team', 'Dedicated PM', '24/7 on-call & SLAs'],
+            cta: 'Talk To Us',
+            featured: false,
+          },
+        ].map((plan) => (
+          <div class={`rounded-3xl p-8 shadow-lg border ${plan.featured ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800'}`}>
+            <p class="uppercase text-sm tracking-widest">{plan.name}</p>
+            <h2 class={`font-display text-4xl font-bold mt-4 ${plan.featured ? 'text-white' : 'text-gray-900 dark:text-white'}`}>{plan.price}</h2>
+            <p class={`mt-2 ${plan.featured ? 'text-blue-100' : 'text-gray-600 dark:text-gray-300'}`}>{plan.description}</p>
+            <ul class="mt-6 space-y-3">
+              {plan.perks.map((perk) => (
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>
+                  <span>{perk}</span>
+                </li>
+              ))}
+            </ul>
+            <a class={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-colors ${plan.featured ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary-light'}`} href="/contact">
+              {plan.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-gray-600 dark:text-gray-300">Need something different? We tailor retainers, workshops, and advisory sessions on demand.</p>
+        <a class="mt-6 inline-flex items-center gap-2 text-primary font-semibold" href="mailto:hello@thecodesorcerer.com">
+          hello@thecodesorcerer.com
+          <span class="material-symbols-outlined text-base">north_east</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
