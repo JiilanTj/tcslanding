@@ -3,17 +3,22 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Services | The Code Sorcerer">
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow"></div>
+
   <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="uppercase text-sm tracking-[0.3em] text-primary">Services</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Spells We Cast For You</h1>
-        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          From high-performance engineering to AI-powered experiences, we help you conjure the product your users can’t live without.
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header -->
+      <div class="text-center mb-16 scroll-reveal">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Services</p>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold text-text-light-primary dark:text-text-dark-primary mt-4">Spells We Cast For You</h1>
+        <p class="mt-6 text-body-lg text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          From high-performance engineering to AI-powered experiences, we help you conjure the product your users can't live without.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal">
         {[
           { icon: 'code', title: 'Product Engineering', body: 'Full-stack development with obsessive attention to quality, scalability, and performance.' },
           { icon: 'auto_awesome', title: 'AI & Automation', body: 'We embed AI assistants, automation, and intelligent analytics directly into your workflows.' },
@@ -22,19 +27,33 @@ import Layout from '../layouts/Layout.astro';
           { icon: 'hub', title: 'Team Augmentation', body: 'Plug senior engineers, designers, or product strategists directly into your squad.' },
           { icon: 'trending_up', title: 'Growth Partnerships', body: 'We stay post-launch to iterate, experiment, and scale with you.' },
         ].map((service) => (
-          <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
-            <span class="material-symbols-outlined text-primary text-4xl">{service.icon}</span>
-            <h3 class="font-display text-xl font-semibold mt-4 text-gray-900 dark:text-white">{service.title}</h3>
-            <p class="mt-3 text-gray-600 dark:text-gray-400">{service.body}</p>
+          <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-card border border-border-light dark:border-border-dark card-glow-hover group">
+            <div class="flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 dark:bg-primary/20 mb-5 group-hover:scale-110 transition-transform duration-300">
+              <span class="material-symbols-outlined text-primary-light dark:text-primary text-3xl">{service.icon}</span>
+            </div>
+            <h3 class="font-display text-heading-3 font-semibold text-text-light-primary dark:text-text-dark-primary">{service.title}</h3>
+            <p class="mt-4 text-body-md text-text-light-secondary dark:text-text-dark-tertiary leading-relaxed">{service.body}</p>
           </div>
         ))}
       </div>
 
-      <div class="mt-16 bg-primary text-white rounded-2xl p-10 text-center">
-        <h2 class="font-display text-3xl font-bold">Need a custom ritual?</h2>
-        <p class="mt-4 text-blue-100">Tell us what you’re building. We’ll design a bespoke engagement to match.</p>
-        <a class="mt-6 inline-flex items-center justify-center bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors" href="/pricing">Explore Pricing</a>
+      <!-- CTA Section -->
+      <div class="mt-20 bg-gradient-to-br from-primary-light to-accent dark:from-primary dark:to-accent text-white rounded-3xl p-12 text-center shadow-glow scroll-reveal">
+        <h2 class="font-display text-heading-1 font-bold">Need a custom ritual?</h2>
+        <p class="mt-4 text-body-lg text-blue-50 max-w-2xl mx-auto">Tell us what you're building. We'll design a bespoke engagement to match.</p>
+        <a class="mt-8 inline-flex items-center justify-center btn-primary bg-white text-primary-light dark:text-primary font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5" href="/pricing">
+          Explore Pricing
+          <span class="material-symbols-outlined ml-2">arrow_forward</span>
+        </a>
       </div>
     </div>
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initAnimations();
+    });
+  </script>
 </Layout>

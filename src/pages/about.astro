@@ -3,9 +3,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="About | The Code Sorcerer">
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow"></div>
+  
   <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="container mx-auto px-6 space-y-20">
-      <section class="grid md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-7xl mx-auto px-6 space-y-20">
+      <section class="grid md:grid-cols-2 gap-12 items-center scroll-reveal">
         <div>
           <p class="uppercase text-sm tracking-[0.3em] text-primary">About</p>
           <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">We Don’t Code. We Cast Spells.</h1>
@@ -17,46 +20,55 @@ import Layout from '../layouts/Layout.astro';
             We stay small by design so every engagement gets a battle-tested trio: product strategy, experience design, and elite engineering.
           </p>
         </div>
-        <div class="relative">
-          <div class="bg-primary/10 blur-3xl absolute inset-0 -z-10 rounded-full"></div>
-          <img class="rounded-3xl shadow-2xl" src="/team-illustration.svg" alt="The Code Sorcerer team collaboration"/>
+        <div class="relative group">
+          <div class="bg-primary/20 dark:bg-primary/10 blur-3xl absolute inset-0 -z-10 rounded-full group-hover:blur-[100px] transition-all duration-700"></div>
+          <img class="rounded-3xl shadow-card hover:shadow-card-hover transition-shadow duration-300" src="/team-illustration.svg" alt="The Code Sorcerer team collaboration"/>
         </div>
       </section>
 
-      <section class="grid md:grid-cols-3 gap-8">
+      <section class="grid md:grid-cols-3 gap-8 scroll-reveal">
         {[
           { label: 'Years of Shipping', value: '12+' },
           { label: 'Products Launched', value: '80+' },
           { label: 'Avg. Engagement', value: '6+ months' },
         ].map((stat) => (
-          <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 text-center shadow-sm border border-gray-100 dark:border-gray-800">
-            <p class="font-display text-4xl text-primary font-bold">{stat.value}</p>
+          <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 text-center shadow-sm border border-gray-100 dark:border-gray-800 card-hover group">
+            <p class="font-display text-4xl text-primary font-bold group-hover:scale-110 transition-transform duration-300">{stat.value}</p>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{stat.label}</p>
           </div>
         ))}
       </section>
 
-      <section class="bg-neutral-silver dark:bg-gray-900/50 rounded-3xl p-10">
+      <section class="bg-neutral-silver dark:bg-gray-900/50 rounded-3xl p-10 scroll-reveal">
         <h2 class="font-display text-3xl font-semibold text-gray-900 dark:text-white">Our Principles</h2>
         <div class="mt-8 grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">Craftsmanship > Everything</h3>
+          <div class="group">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">Craftsmanship > Everything</h3>
             <p class="mt-2 text-gray-600 dark:text-gray-300">We sweat the narrative, the architecture, the motion. Taste matters.</p>
           </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">Senior Talent Only</h3>
+          <div class="group">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">Senior Talent Only</h3>
             <p class="mt-2 text-gray-600 dark:text-gray-300">No juniors. You get the people who have been there, done that, and shipped it.</p>
           </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">Radical Transparency</h3>
+          <div class="group">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">Radical Transparency</h3>
             <p class="mt-2 text-gray-600 dark:text-gray-300">Weekly rituals, async updates, and shared dashboards keep you in the loop.</p>
           </div>
-          <div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">Long-term Partnerships</h3>
+          <div class="group">
+            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">Long-term Partnerships</h3>
             <p class="mt-2 text-gray-600 dark:text-gray-300">Most clients stay for multiple launches—we grow with you.</p>
           </div>
         </div>
       </section>
     </div>
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    
+    // Initialize animations when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      initAnimations();
+    });
+  </script>
 </Layout>

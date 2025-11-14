@@ -3,17 +3,20 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Pricing | The Code Sorcerer">
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow"></div>
+
   <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="uppercase text-sm tracking-[0.3em] text-primary">Pricing</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Choose Your Spell</h1>
-        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Pricing</p>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold text-gray-900 dark:text-text-dark-primary mt-4">Choose Your Spell</h1>
+        <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary max-w-2xl mx-auto leading-relaxed">
           Flexible engagement models for founders shipping fast and teams scaling with confidence.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch scroll-reveal">
         {[
           {
             name: 'Starter Spell',
@@ -40,10 +43,11 @@ import Layout from '../layouts/Layout.astro';
             featured: false,
           },
         ].map((plan) => (
-          <div class={`rounded-3xl p-8 shadow-lg border ${plan.featured ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800'}`}>
-            <p class="uppercase text-sm tracking-widest">{plan.name}</p>
-            <h2 class={`font-display text-4xl font-bold mt-4 ${plan.featured ? 'text-white' : 'text-gray-900 dark:text-white'}`}>{plan.price}</h2>
-            <p class={`mt-2 ${plan.featured ? 'text-blue-100' : 'text-gray-600 dark:text-gray-300'}`}>{plan.description}</p>
+          <div class={`rounded-3xl p-8 shadow-card border card-hover group ${plan.featured ? 'bg-gradient-to-br from-primary to-accent text-white border-primary scale-105 shadow-glow' : 'bg-white dark:bg-surface-dark border-gray-200 dark:border-border-dark'}`}>
+            {plan.featured && <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-white text-primary text-sm font-semibold px-5 py-1.5 rounded-full shadow-lg">Most Popular</span>}
+            <p class="uppercase text-sm tracking-widest font-semibold">{plan.name}</p>
+            <h2 class={`font-display text-display-sm font-bold mt-4`}>{plan.price}</h2>
+            <p class={`mt-3 text-body-md ${plan.featured ? 'text-blue-50' : 'text-gray-600 dark:text-text-dark-secondary'}`}>{plan.description}</p>
             <ul class="mt-6 space-y-3">
               {plan.perks.map((perk) => (
                 <li class="flex items-center gap-3">
@@ -52,20 +56,28 @@ import Layout from '../layouts/Layout.astro';
                 </li>
               ))}
             </ul>
-            <a class={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-colors ${plan.featured ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary-light'}`} href="/contact">
+            <a class={`mt-8 inline-flex w-full items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-300 hover:-translate-y-0.5 ${plan.featured ? 'btn-primary bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary-light'}`} href="/contact">
               {plan.cta}
             </a>
           </div>
         ))}
       </div>
 
-      <div class="mt-16 text-center">
-        <p class="text-gray-600 dark:text-gray-300">Need something different? We tailor retainers, workshops, and advisory sessions on demand.</p>
-        <a class="mt-6 inline-flex items-center gap-2 text-primary font-semibold" href="mailto:hello@thecodesorcerer.com">
+      <div class="mt-16 text-center scroll-reveal">
+        <p class="text-body-md text-gray-600 dark:text-text-dark-secondary">Need something different? We tailor retainers, workshops, and advisory sessions on demand.</p>
+        <a class="mt-6 inline-flex items-center gap-2 text-primary-light dark:text-primary font-semibold hover:gap-3 transition-all" href="mailto:hello@thecodesorcerer.com">
           hello@thecodesorcerer.com
           <span class="material-symbols-outlined text-base">north_east</span>
         </a>
       </div>
     </div>
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initAnimations();
+    });
+  </script>
 </Layout>

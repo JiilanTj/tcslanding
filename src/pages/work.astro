@@ -3,17 +3,20 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Work | The Code Sorcerer">
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow"></div>
+
   <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="uppercase text-sm tracking-[0.3em] text-primary">Work</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Enchantments In The Wild</h1>
-        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Work</p>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold text-gray-900 dark:text-text-dark-primary mt-4">Enchantments In The Wild</h1>
+        <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
           A few glimpses of how we’ve woven engineering, AI, and design together to help ambitious teams scale faster.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-10">
+      <div class="grid md:grid-cols-2 gap-10 scroll-reveal">
         {[
           {
             title: 'Project Alchemy',
@@ -40,11 +43,11 @@ import Layout from '../layouts/Layout.astro';
             img: '/project-alchemy.svg',
           },
         ].map((project) => (
-          <article class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
-            <img class="w-full h-56 object-cover" src={project.img} alt={project.title} loading="lazy"/>
+          <article class="bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-card border border-gray-100 dark:border-border-dark card-hover group">
+            <img class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" src={project.img} alt={project.title} loading="lazy"/>
             <div class="p-8">
-              <h3 class="font-display text-2xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
-              <p class="mt-4 text-gray-600 dark:text-gray-400">{project.body}</p>
+              <h3 class="font-display text-heading-2 font-semibold text-gray-900 dark:text-text-dark-primary group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+              <p class="mt-4 text-body-md text-gray-600 dark:text-text-dark-secondary leading-relaxed">{project.body}</p>
               <div class="mt-6 flex flex-wrap gap-3">
                 {project.tags.map((tag) => (
                   <span class="px-3 py-1 text-sm rounded-full bg-neutral-silver dark:bg-gray-800 text-gray-700 dark:text-gray-200">{tag}</span>
@@ -55,11 +58,20 @@ import Layout from '../layouts/Layout.astro';
         ))}
       </div>
 
-      <div class="mt-16 text-center">
-        <a class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition-colors" href="/contact">
+      <div class="mt-16 text-center scroll-reveal">
+        <a class="btn-primary inline-flex items-center gap-2" href="/contact">
           Start Your Next Build
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
         </a>
       </div>
     </div>
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initAnimations();
+    });
+  </script>
 </Layout>

@@ -12,24 +12,216 @@
   }
 }
 
-@layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+@layer components {
+  /* Scroll reveal animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
   
-  @keyframes float {
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Stagger animation delays for children */
+  .scroll-reveal-stagger > *:nth-child(1) { transition-delay: 0.1s; }
+  .scroll-reveal-stagger > *:nth-child(2) { transition-delay: 0.2s; }
+  .scroll-reveal-stagger > *:nth-child(3) { transition-delay: 0.3s; }
+  .scroll-reveal-stagger > *:nth-child(4) { transition-delay: 0.4s; }
+  .scroll-reveal-stagger > *:nth-child(5) { transition-delay: 0.5s; }
+  .scroll-reveal-stagger > *:nth-child(6) { transition-delay: 0.6s; }
+}
+
+@layer utilities {
+  /* Subtle breathing animation for logo */
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+  
+  @keyframes breathe {
     0%, 100% {
-      transform: translateY(0px);
+      transform: scale(1);
+      opacity: 1;
     }
     50% {
-      transform: translateY(-20px);
+      transform: scale(1.02);
+      opacity: 0.95;
     }
   }
   
+  /* Enhanced gradient text */
   .gradient-text {
     background: linear-gradient(135deg, #0066FF 0%, #7A5FFF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* Animated gradient text */
+  .gradient-text-animated {
+    background: linear-gradient(135deg, #0066FF 0%, #7A5FFF 50%, #0066FF 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+  }
+  
+  /* Button micro-interactions */
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-4 px-8 rounded-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-primary-light hover:shadow-xl hover:shadow-primary/30;
+    @apply hover:-translate-y-0.5 active:translate-y-0;
+    @apply relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-900 dark:bg-gray-800 text-white font-semibold py-4 px-8 rounded-lg;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-gray-800 dark:hover:bg-gray-700 hover:shadow-xl;
+    @apply hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    @apply hover:shadow-2xl hover:-translate-y-1;
+  }
+  
+  .card-glow-hover {
+    @apply relative transition-all duration-300 ease-out;
+    @apply hover:-translate-y-1;
+  }
+  
+  .card-glow-hover::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #0066FF, #7A5FFF);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    filter: blur(10px);
+  }
+  
+  .card-glow-hover:hover::before {
+    opacity: 0.3;
+  }
+  
+  /* Cursor glow effect */
+  .cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  /* Light mode cursor glow - darker and more visible */
+  :root:not(.dark) .cursor-glow {
+    background: radial-gradient(
+      circle, 
+      rgba(0, 102, 255, 0.25) 0%, 
+      rgba(122, 95, 255, 0.18) 30%, 
+      rgba(122, 95, 255, 0.10) 50%, 
+      transparent 70%
+    );
+    mix-blend-mode: multiply;
+    filter: blur(30px);
+  }
+  
+  /* Dark mode cursor glow - lighter */
+  :root.dark .cursor-glow {
+    background: radial-gradient(
+      circle, 
+      rgba(0, 102, 255, 0.25) 0%, 
+      rgba(122, 95, 255, 0.15) 40%, 
+      transparent 70%
+    );
+    mix-blend-mode: screen;
+    filter: blur(40px);
+  }
+  
+  /* Enhanced text shadows for better contrast in dark mode */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Smooth scale animation */
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+  
+  @keyframes scale-in {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }

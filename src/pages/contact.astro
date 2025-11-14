@@ -3,43 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact | The Code Sorcerer">
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow"></div>
+
   <main class="bg-background-light dark:bg-background-dark py-24">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <div class="text-center mb-12">
-        <p class="uppercase text-sm tracking-[0.3em] text-primary">Contact</p>
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-4">Let’s Conjure Something</h1>
-        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">Tell us about the product you’re building and we’ll set up a jam session.</p>
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 scroll-reveal">
+        <p class="uppercase text-sm tracking-[0.3em] text-primary-light dark:text-primary font-semibold">Contact</p>
+        <h1 class="font-display text-display-md md:text-display-lg font-bold text-gray-900 dark:text-text-dark-primary mt-4">Let's Conjure Something</h1>
+        <p class="mt-6 text-body-lg text-gray-700 dark:text-text-dark-secondary leading-relaxed">Tell us about the product you're building and we'll set up a jam session.</p>
       </div>
 
-      <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 p-10">
+      <div class="bg-white dark:bg-surface-dark rounded-3xl shadow-card border border-gray-100 dark:border-border-dark p-10 scroll-reveal">
         <form class="space-y-6">
           <div class="grid md:grid-cols-2 gap-6">
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+            <label class="block text-sm font-medium text-gray-700 dark:text-text-dark-primary">
               Name
-              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="text" placeholder="Ada Lovelace"/>
+              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-border-dark bg-transparent px-4 py-3 text-gray-900 dark:text-text-dark-primary focus:outline-none focus:ring-2 focus:ring-primary transition-shadow" type="text" placeholder="Ada Lovelace"/>
             </label>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+            <label class="block text-sm font-medium text-gray-700 dark:text-text-dark-primary">
               Email
-              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="email" placeholder="you@company.com"/>
+              <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-border-dark bg-transparent px-4 py-3 text-gray-900 dark:text-text-dark-primary focus:outline-none focus:ring-2 focus:ring-primary transition-shadow" type="email" placeholder="you@company.com"/>
             </label>
           </div>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+          <label class="block text-sm font-medium text-gray-700 dark:text-text-dark-primary">
             Company
-            <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" type="text" placeholder="The Code Sorcerer"/>
+            <input class="mt-2 w-full rounded-xl border border-gray-200 dark:border-border-dark bg-transparent px-4 py-3 text-gray-900 dark:text-text-dark-primary focus:outline-none focus:ring-2 focus:ring-primary transition-shadow" type="text" placeholder="The Code Sorcerer"/>
           </label>
-          <label class="block text-sm font-medium text-gray-700 dark:text-gray-200">
+          <label class="block text-sm font-medium text-gray-700 dark:text-text-dark-primary">
             What are you looking to build?
-            <textarea class="mt-2 w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tell us about timelines, scope, goals…"></textarea>
+            <textarea class="mt-2 w-full rounded-xl border border-gray-200 dark:border-border-dark bg-transparent px-4 py-3 h-32 text-gray-900 dark:text-text-dark-primary focus:outline-none focus:ring-2 focus:ring-primary transition-shadow resize-none" placeholder="Tell us about timelines, scope, goals…"></textarea>
           </label>
-          <button class="w-full bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary-light transition-colors" type="submit">
+          <button class="btn-primary w-full" type="submit">
             Send Message
           </button>
         </form>
 
-        <div class="mt-10 text-center text-gray-600 dark:text-gray-400">
-          Prefer email? <a class="text-primary font-semibold" href="mailto:hello@thecodesorcerer.com">hello@thecodesorcerer.com</a>
+        <div class="mt-10 text-center text-body-md text-gray-600 dark:text-text-dark-secondary">
+          Prefer email? <a class="text-primary-light dark:text-primary font-semibold hover:underline transition-all" href="mailto:hello@thecodesorcerer.com">hello@thecodesorcerer.com</a>
         </div>
       </div>
     </div>
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations';
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      initAnimations();
+    });
+  </script>
 </Layout>
