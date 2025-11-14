@@ -46,6 +46,17 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+  /* Hero reveal animation uses pure CSS so LCP isn't blocked by JS */
+  .hero-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-reveal-in 700ms ease-out forwards;
+  }
+
+  .hero-reveal-delay {
+    animation-delay: 120ms;
+  }
   
   /* Stagger animation delays for children */
   .scroll-reveal-stagger > *:nth-child(1) { transition-delay: 0.1s; }
@@ -57,7 +68,7 @@
 }
 
 @layer utilities {
-  /* Subtle breathing animation for logo */
+/* Subtle breathing animation for logo */
   .animate-breathe {
     animation: breathe 4s ease-in-out infinite;
   }
@@ -70,6 +81,30 @@
     50% {
       transform: scale(1.02);
       opacity: 0.95;
+    }
+  }
+  
+  @keyframes hero-reveal-in {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Keep content visible for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .scroll-reveal-left,
+    .scroll-reveal-right,
+    .hero-reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
     }
   }
   

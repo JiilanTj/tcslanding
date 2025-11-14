@@ -15,6 +15,20 @@ const navLinks: NavLink[] = [
   { label: 'Blog', href: '/blog' },
 ];
 
+const desktopLinkBase =
+  'relative font-medium transition-all duration-200 hover:scale-105 pb-1 border-b-2 border-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary/70';
+const desktopLinkActive =
+  'text-gray-900 dark:text-text-dark-primary border-primary dark:border-primary font-semibold';
+const desktopLinkInactive =
+  'text-gray-700 dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary';
+
+const mobileLinkBase =
+  'block py-2 px-4 rounded-lg font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/70';
+const mobileLinkActive =
+  'bg-primary/10 text-text-light-primary dark:text-text-dark-primary border border-primary/30';
+const mobileLinkInactive =
+  'text-gray-700 dark:text-text-dark-secondary hover:bg-gray-100 dark:hover:bg-surface-dark';
+
 const { pathname } = Astro.url;
 
 const isActive = (href: string): boolean => {
@@ -35,7 +49,7 @@ const isActive = (href: string): boolean => {
       <div class="hidden lg:flex items-center space-x-8">
         {navLinks.map((link) => (
           <a
-            class={`font-medium transition-all duration-200 hover:scale-105 ${isActive(link.href) ? 'text-primary dark:text-primary font-semibold' : 'text-gray-700 dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary'}`}
+            class={`${desktopLinkBase} ${isActive(link.href) ? desktopLinkActive : desktopLinkInactive}`}
             href={link.href}
             aria-current={isActive(link.href) ? 'page' : undefined}
           >
@@ -62,8 +76,9 @@ const isActive = (href: string): boolean => {
       <div class="max-w-7xl mx-auto px-6 py-4 space-y-3">
         {navLinks.map((link) => (
           <a
-            class={`block py-2 px-4 rounded-lg font-medium transition-colors ${isActive(link.href) ? 'bg-primary/10 text-primary' : 'text-gray-700 dark:text-text-dark-secondary hover:bg-gray-100 dark:hover:bg-surface-dark'}`}
+            class={`${mobileLinkBase} ${isActive(link.href) ? mobileLinkActive : mobileLinkInactive}`}
             href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
           >
             {link.label}
           </a>

@@ -80,16 +80,16 @@ export function initCursorGlow() {
 
 // Initialize all animations - use requestIdleCallback for better performance
 export function initAnimations() {
-  // Use requestIdleCallback for non-critical animations
+  // Scroll reveal controls the hero/LCP so run it immediately after hydration
+  initScrollReveal();
+
+  // Defer the purely decorative cursor glow so it never blocks rendering
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
-      initScrollReveal();
       initCursorGlow();
     }, { timeout: 2000 });
   } else {
-    // Fallback for browsers without requestIdleCallback
     setTimeout(() => {
-      initScrollReveal();
       initCursorGlow();
     }, 1);
   }
