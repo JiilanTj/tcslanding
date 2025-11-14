@@ -17,8 +17,8 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID ?? 'GTM-WJF4D4LH';
 <html lang="en">
 <head>
   <!-- Google Tag Manager - Deferred for better performance -->
-  <script is:inline>
-    const GTM_ID = {JSON.stringify(gtmId)};
+  <script is:inline set:html={`
+    const GTM_ID = ${JSON.stringify(gtmId)};
     if (GTM_ID) {
       (function() {
         let gtmLoaded = false;
@@ -44,7 +44,7 @@ const gtmId = import.meta.env.PUBLIC_GTM_ID ?? 'GTM-WJF4D4LH';
         }
       })();
     }
-  </script>
+  `}></script>
   <!-- End Google Tag Manager -->
   <!-- Structured Data: Organization & WebSite -->
   <script type="application/ld+json" is:inline>{JSON.stringify({
